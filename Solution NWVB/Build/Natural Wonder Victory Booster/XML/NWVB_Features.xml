@@ -1,0 +1,81 @@
+<?xml version="1.0" encoding="utf-8"?>
+<!-- Created by yepzer using ModBuddy on 7/28/2024 12:53:25 PM -->
+<GameData>
+
+	<Features>
+		<Row>
+			<Type>FEATURE_FOC</Type>
+			<Description>(NWVB) Fountain of Culture</Description>
+			<Civilopedia>(NWVB) FOC Civilopedia</Civilopedia>
+			<ArtDefineTag>ART_DEF_FEATURE_FOUNTAIN_YOUTH</ArtDefineTag>
+			<Movement>1</Movement>
+			<InfluenceCost>-1</InfluenceCost>
+			<NaturalWonder>true</NaturalWonder>
+			<NoImprovement>true</NoImprovement>
+			<OccurrenceFrequency>500</OccurrenceFrequency>
+			<NoCity>True</NoCity>
+			<VisibleAlways>True</VisibleAlways>
+			<PortraitIndex>1</PortraitIndex>
+			<IconAtlas>NW_ATLAS_DLC</IconAtlas>
+		</Row>
+		<Row>
+			<Type>FEATURE_ELGOLD</Type>
+			<Description>(NWVB) Golden El Dorado</Description>
+			<Civilopedia>(NWVB) Golden El Dorado Civilopedia</Civilopedia>
+			<ArtDefineTag>ART_DEF_FEATURE_EL_DORADO</ArtDefineTag>
+			<Movement>1</Movement>
+			<InfluenceCost>-1</InfluenceCost>
+			<NaturalWonder>true</NaturalWonder>
+			<NoImprovement>true</NoImprovement>
+			<OccurrenceFrequency>1000</OccurrenceFrequency>
+			<NoCity>True</NoCity>
+			<VisibleAlways>True</VisibleAlways>
+			<PortraitIndex>0</PortraitIndex>
+			<IconAtlas>NW_ATLAS_DLC</IconAtlas>
+		</Row>
+	</Features>
+
+	<Natural_Wonder_Placement>
+		<Row>
+			<!-- via Natural Wonders Enhanced v1 -->
+			<NaturalWonderType>FEATURE_ELGOLD</NaturalWonderType>
+			<OccurrenceFrequency>100</OccurrenceFrequency>
+			<AvoidLandAdjacentToOcean>true</AvoidLandAdjacentToOcean>
+			<AdjacentTilesCareAboutFeatureTypes>true</AdjacentTilesCareAboutFeatureTypes>
+			<AdjacentTilesRequireJungle>true</AdjacentTilesRequireJungle>
+			<RequiredNumberOfAdjacentJungle>3</RequiredNumberOfAdjacentJungle>
+			<AdjacentTilesCareAboutTerrainTypes>true</AdjacentTilesCareAboutTerrainTypes>
+			<AdjacentTilesAvoidTundra>true</AdjacentTilesAvoidTundra>
+			<MaximumAllowedAdjacentTundra>0</MaximumAllowedAdjacentTundra>
+			<AdjacentTilesAvoidSnow>true</AdjacentTilesAvoidSnow>
+			<MaximumAllowedAdjacentSnow>0</MaximumAllowedAdjacentSnow>
+			<AdjacentTilesCareAboutPlotTypes>true</AdjacentTilesCareAboutPlotTypes>
+			<AdjacentTilesAvoidMountain>true</AdjacentTilesAvoidMountain>
+			<MaximumAllowedAdjacentMountain>2</MaximumAllowedAdjacentMountain>
+			<AdjacentTilesAvoidHills>true</AdjacentTilesAvoidHills>
+			<MaximumAllowedAdjacentHills>2</MaximumAllowedAdjacentHills>
+			<ChangeCoreTileToFlatland>true</ChangeCoreTileToFlatland>
+			<ChangeCoreTileTerrainToPlains>true</ChangeCoreTileTerrainToPlains>
+		</Row>
+		<Row>
+			<!-- via Natural Wonders Enhanced v1 -->
+			<NaturalWonderType>FEATURE_FOC</NaturalWonderType>
+			<OccurrenceFrequency>100</OccurrenceFrequency>
+			<AvoidLandAdjacentToOcean>true</AvoidLandAdjacentToOcean>
+			<CoreTileCanBeAnyTerrainType>false</CoreTileCanBeAnyTerrainType>
+			<CoreTileCanBeGrass>true</CoreTileCanBeGrass>
+			<CoreTileCanBePlains>true</CoreTileCanBePlains>
+			<AdjacentTilesCareAboutPlotTypes>true</AdjacentTilesCareAboutPlotTypes>
+			<AdjacentTilesAvoidMountain>true</AdjacentTilesAvoidMountain>
+			<MaximumAllowedAdjacentMountain>2</MaximumAllowedAdjacentMountain>
+			<AdjacentTilesAvoidHills>true</AdjacentTilesAvoidHills>
+			<MaximumAllowedAdjacentHills>3</MaximumAllowedAdjacentHills>
+			<AdjacentTilesCareAboutTerrainTypes>true</AdjacentTilesCareAboutTerrainTypes>
+			<AdjacentTilesAvoidTundra>true</AdjacentTilesAvoidTundra>
+			<MaximumAllowedAdjacentTundra>0</MaximumAllowedAdjacentTundra>
+			<ChangeCoreTileToFlatland>true</ChangeCoreTileToFlatland>
+			<ChangeCoreTileTerrainToPlains>true</ChangeCoreTileTerrainToPlains>
+		</Row>
+	</Natural_Wonder_Placement>
+	
+</GameData>

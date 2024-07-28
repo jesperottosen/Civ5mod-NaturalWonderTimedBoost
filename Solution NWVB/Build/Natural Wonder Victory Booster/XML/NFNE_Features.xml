@@ -1,0 +1,10 @@
+<?xml version="1.0" encoding="utf-8"?>
+<!-- Created by Erik Taurus using ModBuddy on 1/4/2013 4:53:30 PM -->
+<GameData>
+	<!-- Via NoFoYNoEldorado v1 -->
+	<Features>
+		<Delete Type="FEATURE_FOUNTAIN_YOUTH"/>
+		<Delete Type="FEATURE_EL_DORADO"/>
+	</Features>
+  
+</GameData>

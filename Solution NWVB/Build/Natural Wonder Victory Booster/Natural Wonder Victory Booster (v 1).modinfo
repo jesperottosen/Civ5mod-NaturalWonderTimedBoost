@@ -1,0 +1,37 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<Mod id="18a7bcc1-c7d2-45a4-aa98-a6debf27c2a8" version="1">
+  <Properties>
+    <Name>Natural Wonder Victory Booster</Name>
+    <Stability>Alpha</Stability>
+    <Teaser>occurence</Teaser>
+    <Description>Rework the Fountain of Youth and El Dorado Natural Wonders</Description>
+    <Authors>yepzer</Authors>
+    <SpecialThanks>Erik Taurus, Leo</SpecialThanks>
+    <HideSetupGame>0</HideSetupGame>
+    <AffectsSavedGames>1</AffectsSavedGames>
+    <MinCompatibleSaveVersion>0</MinCompatibleSaveVersion>
+    <SupportsSinglePlayer>1</SupportsSinglePlayer>
+    <SupportsMultiplayer>1</SupportsMultiplayer>
+    <SupportsHotSeat>1</SupportsHotSeat>
+    <SupportsMac>1</SupportsMac>
+    <ReloadAudioSystem>0</ReloadAudioSystem>
+    <ReloadLandmarkSystem>1</ReloadLandmarkSystem>
+    <ReloadStrategicViewSystem>0</ReloadStrategicViewSystem>
+    <ReloadUnitSystem>0</ReloadUnitSystem>
+  </Properties>
+  <Dependencies>
+    <Dlc id="6DA07636-4123-4018-B643-6575B4EC336B" minversion="0" maxversion="999" />
+  </Dependencies>
+  <References />
+  <Blocks />
+  <Files>
+    <File md5="109D947A4F6D19C93E03DD8E7EFCC6C1" import="0">XML/NWVB_Features.xml</File>
+    <File md5="61E16A802C0DB7AA780AF6487A444F32" import="0">XML/NFNE_Features.xml</File>
+  </Files>
+  <Actions>
+    <OnModActivated>
+      <UpdateDatabase>XML/NFNE_Features.xml</UpdateDatabase>
+      <UpdateDatabase>XML/NWVB_Features.xml</UpdateDatabase>
+    </OnModActivated>
+  </Actions>
+</Mod>
