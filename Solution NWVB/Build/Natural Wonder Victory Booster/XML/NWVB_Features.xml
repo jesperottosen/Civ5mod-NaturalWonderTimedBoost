@@ -4,22 +4,22 @@
 
 	<Features>
 		<Row>
-			<Type>FEATURE_FOC</Type>
+			<Type>FEATURE_NWVB_FOC</Type>
 			<Description>(NWVB) Fountain of Culture</Description>
-			<Civilopedia>(NWVB) FOC Civilopedia</Civilopedia>
+			<Civilopedia>(NWVB) Fountain of Culture Civilopedia</Civilopedia>
 			<ArtDefineTag>ART_DEF_FEATURE_FOUNTAIN_YOUTH</ArtDefineTag>
 			<Movement>1</Movement>
 			<InfluenceCost>-1</InfluenceCost>
 			<NaturalWonder>true</NaturalWonder>
 			<NoImprovement>true</NoImprovement>
-			<OccurrenceFrequency>500</OccurrenceFrequency>
+			<OccurrenceFrequency>1000</OccurrenceFrequency>
 			<NoCity>True</NoCity>
-			<VisibleAlways>True</VisibleAlways>
+			<Rough>False</Rough>
 			<PortraitIndex>1</PortraitIndex>
 			<IconAtlas>NW_ATLAS_DLC</IconAtlas>
 		</Row>
 		<Row>
-			<Type>FEATURE_ELGOLD</Type>
+			<Type>FEATURE_NWVB_GED</Type>
 			<Description>(NWVB) Golden El Dorado</Description>
 			<Civilopedia>(NWVB) Golden El Dorado Civilopedia</Civilopedia>
 			<ArtDefineTag>ART_DEF_FEATURE_EL_DORADO</ArtDefineTag>
@@ -29,7 +29,7 @@
 			<NoImprovement>true</NoImprovement>
 			<OccurrenceFrequency>1000</OccurrenceFrequency>
 			<NoCity>True</NoCity>
-			<VisibleAlways>True</VisibleAlways>
+			<Rough>False</Rough>
 			<PortraitIndex>0</PortraitIndex>
 			<IconAtlas>NW_ATLAS_DLC</IconAtlas>
 		</Row>
@@ -37,13 +37,13 @@
 
 	<Natural_Wonder_Placement>
 		<Row>
+			<NaturalWonderType>FEATURE_NWVB_GED</NaturalWonderType>
+			<OccurrenceFrequency>1000</OccurrenceFrequency>
 			<!-- via Natural Wonders Enhanced v1 -->
-			<NaturalWonderType>FEATURE_ELGOLD</NaturalWonderType>
-			<OccurrenceFrequency>100</OccurrenceFrequency>
 			<AvoidLandAdjacentToOcean>true</AvoidLandAdjacentToOcean>
 			<AdjacentTilesCareAboutFeatureTypes>true</AdjacentTilesCareAboutFeatureTypes>
-			<AdjacentTilesRequireJungle>true</AdjacentTilesRequireJungle>
-			<RequiredNumberOfAdjacentJungle>3</RequiredNumberOfAdjacentJungle>
+			<AdjacentTilesRequireJungle>true</AdjacentTilesRequireJungle> 
+			<RequiredNumberOfAdjacentJungle>2</RequiredNumberOfAdjacentJungle> 
 			<AdjacentTilesCareAboutTerrainTypes>true</AdjacentTilesCareAboutTerrainTypes>
 			<AdjacentTilesAvoidTundra>true</AdjacentTilesAvoidTundra>
 			<MaximumAllowedAdjacentTundra>0</MaximumAllowedAdjacentTundra>
@@ -58,9 +58,9 @@
 			<ChangeCoreTileTerrainToPlains>true</ChangeCoreTileTerrainToPlains>
 		</Row>
 		<Row>
+			<NaturalWonderType>FEATURE_NWVB_FOC</NaturalWonderType>
+			<OccurrenceFrequency>1000</OccurrenceFrequency>
 			<!-- via Natural Wonders Enhanced v1 -->
-			<NaturalWonderType>FEATURE_FOC</NaturalWonderType>
-			<OccurrenceFrequency>100</OccurrenceFrequency>
 			<AvoidLandAdjacentToOcean>true</AvoidLandAdjacentToOcean>
 			<CoreTileCanBeAnyTerrainType>false</CoreTileCanBeAnyTerrainType>
 			<CoreTileCanBeGrass>true</CoreTileCanBeGrass>

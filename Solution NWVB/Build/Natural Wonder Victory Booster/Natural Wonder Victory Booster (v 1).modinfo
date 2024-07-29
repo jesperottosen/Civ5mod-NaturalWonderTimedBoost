@@ -3,10 +3,19 @@
   <Properties>
     <Name>Natural Wonder Victory Booster</Name>
     <Stability>Alpha</Stability>
-    <Teaser>occurence</Teaser>
-    <Description>Rework the Fountain of Youth and El Dorado Natural Wonders</Description>
+    <Teaser>Rework the Fountain of Youth and El Dorado Natural Wonders</Teaser>
+    <Description>XML
+- Remove standard Fountain of Youth and El Dorado (NFNE by Taurus)
+- Add custom Fountain of Culture, Golden El Dorado
+- Natural wonder placements settings by Leo
+
+LUA Unit into Custom Feature
+- set timer (conan.morris)
+- set plot owner (conan.morris)
+- set plot owner adjacent (conan.morris)
+- notify</Description>
     <Authors>yepzer</Authors>
-    <SpecialThanks>Erik Taurus, Leo</SpecialThanks>
+    <SpecialThanks>Erik Taurus, Leo, conan.morris</SpecialThanks>
     <HideSetupGame>0</HideSetupGame>
     <AffectsSavedGames>1</AffectsSavedGames>
     <MinCompatibleSaveVersion>0</MinCompatibleSaveVersion>
@@ -16,16 +25,21 @@
     <SupportsMac>1</SupportsMac>
     <ReloadAudioSystem>0</ReloadAudioSystem>
     <ReloadLandmarkSystem>1</ReloadLandmarkSystem>
-    <ReloadStrategicViewSystem>0</ReloadStrategicViewSystem>
+    <ReloadStrategicViewSystem>1</ReloadStrategicViewSystem>
     <ReloadUnitSystem>0</ReloadUnitSystem>
   </Properties>
   <Dependencies>
     <Dlc id="6DA07636-4123-4018-B643-6575B4EC336B" minversion="0" maxversion="999" />
   </Dependencies>
-  <References />
+  <References>
+    <Mod id="f0453ee6-59b3-4fbb-97a9-5c9a8bd8f24e" minversion="1" maxversion="999" title="Natural Wonders Enhanced" />
+    <Mod id="29168713-a3c8-4963-a92f-dfdd3b2923ef" minversion="1" maxversion="999" title="NoFoYNoEldorado" />
+    <Mod id="29240659-7ed2-4392-a648-772c31c949fd" minversion="2" maxversion="999" title="Fortress Borders" />
+  </References>
   <Blocks />
   <Files>
-    <File md5="109D947A4F6D19C93E03DD8E7EFCC6C1" import="0">XML/NWVB_Features.xml</File>
+    <File md5="EADB124CF717F6C1B96BEE1C4FF9CB2E" import="0">LUA/doVictoryBooster.lua</File>
+    <File md5="FD1B37E2AD95A6E5105D6DCC559FF339" import="0">XML/NWVB_Features.xml</File>
     <File md5="61E16A802C0DB7AA780AF6487A444F32" import="0">XML/NFNE_Features.xml</File>
   </Files>
   <Actions>
@@ -34,4 +48,10 @@
       <UpdateDatabase>XML/NWVB_Features.xml</UpdateDatabase>
     </OnModActivated>
   </Actions>
+  <EntryPoints>
+    <EntryPoint type="InGameUIAddin" file="LUA/doVictoryBooster.lua">
+      <Name>doVictoryBooster</Name>
+      <Description>doVictoryBooster</Description>
+    </EntryPoint>
+  </EntryPoints>
 </Mod>

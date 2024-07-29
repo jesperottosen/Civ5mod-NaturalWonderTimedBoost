@@ -8,9 +8,18 @@
     <ModVersion>1</ModVersion>
     <Stability>Alpha</Stability>
     <Teaser>Rework the Fountain of Youth and El Dorado Natural Wonders</Teaser>
-    <Description>Rework the Fountain of Youth and El Dorado Natural Wonders</Description>
+    <Description>XML
+- Remove standard Fountain of Youth and El Dorado (NFNE by Taurus)
+- Add custom Fountain of Culture, Golden El Dorado
+- Natural wonder placements settings by Leo
+
+LUA Unit into Custom Feature
+- set timer (conan.morris)
+- set plot owner (conan.morris)
+- set plot owner adjacent (conan.morris)
+- notify</Description>
     <Authors>yepzer</Authors>
-    <SpecialThanks>Erik Taurus, Leo</SpecialThanks>
+    <SpecialThanks>Erik Taurus, Leo, conan.morris</SpecialThanks>
     <AffectsSavedGames>true</AffectsSavedGames>
     <MinCompatibleSaveVersion>0</MinCompatibleSaveVersion>
     <SupportsSinglePlayer>true</SupportsSinglePlayer>
@@ -32,6 +41,13 @@
         <Name>NoFoYNoEldorado</Name>
         <Id>29168713-a3c8-4963-a92f-dfdd3b2923ef</Id>
         <MinVersion>1</MinVersion>
+        <MaxVersion>999</MaxVersion>
+      </Association>
+      <Association>
+        <Type>Mod</Type>
+        <Name>Fortress Borders</Name>
+        <Id>29240659-7ed2-4392-a648-772c31c949fd</Id>
+        <MinVersion>2</MinVersion>
         <MaxVersion>999</MaxVersion>
       </Association>
     </ModReferences>
@@ -58,6 +74,14 @@
       </Association>
     </ModDependencies>
     <ReloadStrategicViewSystem>true</ReloadStrategicViewSystem>
+    <ModContent>
+      <Content xmlns="">
+        <Type>InGameUIAddin</Type>
+        <Name>doVictoryBooster</Name>
+        <Description>doVictoryBooster</Description>
+        <FileName>LUA/doVictoryBooster.lua</FileName>
+      </Content>
+    </ModContent>
   </PropertyGroup>
   <PropertyGroup Condition=" '$(Configuration)' == 'Default' ">
     <OutputPath>.</OutputPath>
@@ -71,9 +95,14 @@
     <DeployMod>true</DeployMod>
   </PropertyGroup>
   <ItemGroup>
+    <Folder Include="LUA" />
     <Folder Include="XML" />
   </ItemGroup>
   <ItemGroup>
+    <Content Include="LUA\doVictoryBooster.lua">
+      <SubType>Lua</SubType>
+      <ImportIntoVFS>False</ImportIntoVFS>
+    </Content>
     <Content Include="XML\NWVB_Features.xml">
       <SubType>Lua</SubType>
       <ImportIntoVFS>False</ImportIntoVFS>
