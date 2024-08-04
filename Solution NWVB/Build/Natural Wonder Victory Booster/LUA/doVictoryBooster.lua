@@ -184,20 +184,18 @@ function giveVictoryBoost(iPlayer,iFeatureType)
 end
 
 --------------------------------------------------------------
-function IsTimerActive(iFeatureType) 
+function getTimerActive(iFeatureType) 
 	-- initiate
 	local sKey = ""
 	if (iFeatureType == cFOP) then sKey="NWVB_FOP" end
 	if (iFeatureType == cGEE) then sKey="NWVB_GEE" end
-	if (sKey == "") then return false end
+	if (sKey == "") then return nil end
 	local sFullkey = sKey.."_timer"
 
 	-- execute
 	local db = Modding.OpenSaveData()
 	local iTimer = db.GetValue(sFullkey)
-	if (iTimer == nil) then return false end
-	
-	return true
+	return iTimer
 end
 
 --------------------------------------------------------------
@@ -212,7 +210,7 @@ function setPlotOwnershipTimer(iFeatureType,iX,iY,iPlayer,iTurns)
 
 	local sPlayer = ""
 	if (iPlayer == nil) then sPlayer = "Nature" end
-	if (iPlayer == -1) then sPlayer = "Counting down for reset" end
+	if (iPlayer == -1) then sPlayer = "Resetting" end
 	if ((iPlayer ~= nil) and (iPlayer ~= -1)) then
 		local pPlayer = Players[iPlayer]
 		sPlayer = Locale.ConvertTextKey(pPlayer:GetCivilizationShortDescriptionKey())
@@ -246,22 +244,22 @@ function doUnitPositionChanged(iPlayer,iUnit,iX,iY)
 		
 	local iFeatureType = pPlot:GetFeatureType()	
 	if ((iFeatureType ~= cFOP) and (iFeatureType ~= cGEE)) then return end
-	local bIsTimerOn = IsTimerActive(iFeatureType) 
+	local iTimer = getTimerActive(iFeatureType) 
 	
 	-- print("doUnitPositionChanged: Plot OK, Unit OK, Feature OK")
 	local sResult = ""
 	local sFeature = GameInfo.Features[iFeatureType].Description
 
 	-- Execute
-	if (bIsTimerOn) then 
+	if (iTimer ~= nil) then 
+		sResult = "Timer is on for "..sFeature.. ": "..iTimer
+	else
 		local centerPlot = {}
 		centerPlot.xPosition = iX
 		centerPlot.yPosition = iY
 		claimTerritoryAroundHex(centerPlot, iPlayer)
 		setPlotOwnershipTimer(iFeatureType,iX,iY,iPlayer,cTURNS_TO_BOOST)
-		local sResult = "Hold "..sFeature.." for "..cTURNS_TO_BOOST.." turns"
-	else
-		sResult = sFeature.." is being reset"
+		sResult = "Hold "..sFeature.." for "..cTURNS_TO_BOOST.." turns"
 	end
 		
 	-- Notify	

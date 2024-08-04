@@ -9,12 +9,13 @@
 			<Civilopedia>Hold for a number of turns to receive a Fountain of Policies and some random gold.</Civilopedia>
 			<ArtDefineTag>ART_DEF_FEATURE_FOUNTAIN_YOUTH</ArtDefineTag>
 			<Movement>1</Movement>
-			<InfluenceCost>-1</InfluenceCost>
+			<InfluenceCost>-3</InfluenceCost>
 			<NaturalWonder>true</NaturalWonder>
 			<NoImprovement>true</NoImprovement>
 			<OccurrenceFrequency>500</OccurrenceFrequency>
 			<NoCity>True</NoCity>
-			<Rough>False</Rough>
+			<SeeThrough>2</SeeThrough>
+			<Defense>25</Defense>
 			<PortraitIndex>1</PortraitIndex>
 			<IconAtlas>NW_ATLAS_DLC</IconAtlas>
 		</Row>
@@ -24,16 +25,30 @@
 			<Civilopedia>Hold for a number of turns to receive Golden Eras and some random gold.</Civilopedia>
 			<ArtDefineTag>ART_DEF_FEATURE_EL_DORADO</ArtDefineTag>
 			<Movement>1</Movement>
-			<InfluenceCost>-1</InfluenceCost>
+			<InfluenceCost>-3</InfluenceCost>
 			<NaturalWonder>true</NaturalWonder>
 			<NoImprovement>true</NoImprovement>
 			<OccurrenceFrequency>500</OccurrenceFrequency>
 			<NoCity>True</NoCity>
-			<Rough>False</Rough>
+			<SeeThrough>2</SeeThrough>
+			<Defense>25</Defense>
 			<PortraitIndex>0</PortraitIndex>
 			<IconAtlas>NW_ATLAS_DLC</IconAtlas>
 		</Row>
 	</Features>
+
+	<Feature_YieldChanges>
+		<Row>
+			<FeatureType>FEATURE_NWVB_FOP</FeatureType>
+			<YieldType>YIELD_FAITH</YieldType>
+			<Yield>1</Yield>
+		</Row>
+		<Row>
+			<FeatureType>FEATURE_NWVB_GEE</FeatureType>
+			<YieldType>YIELD_FAITH</YieldType>
+			<Yield>1</Yield>
+		</Row>
+	</Feature_YieldChanges>
 
 	<Natural_Wonder_Placement>
 		<Row>
