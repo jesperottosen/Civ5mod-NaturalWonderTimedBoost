@@ -6,13 +6,13 @@
 		<Row>
 			<Type>FEATURE_NWVB_FOP</Type>
 			<Description>(NWVB) Fountain of Policies</Description>
-			<Civilopedia>(NWVB) Fountain of Policies Civilopedia</Civilopedia>
+			<Civilopedia>Hold for a number of turns to receive a Fountain of Policies and some random gold.</Civilopedia>
 			<ArtDefineTag>ART_DEF_FEATURE_FOUNTAIN_YOUTH</ArtDefineTag>
 			<Movement>1</Movement>
 			<InfluenceCost>-1</InfluenceCost>
 			<NaturalWonder>true</NaturalWonder>
 			<NoImprovement>true</NoImprovement>
-			<OccurrenceFrequency>1000</OccurrenceFrequency>
+			<OccurrenceFrequency>500</OccurrenceFrequency>
 			<NoCity>True</NoCity>
 			<Rough>False</Rough>
 			<PortraitIndex>1</PortraitIndex>
@@ -21,13 +21,13 @@
 		<Row>
 			<Type>FEATURE_NWVB_GEE</Type>
 			<Description>(NWVB) Golden Era El Dorado</Description>
-			<Civilopedia>(NWVB) Golden Era El Dorado Civilopedia</Civilopedia>
+			<Civilopedia>Hold for a number of turns to receive Golden Eras and some random gold.</Civilopedia>
 			<ArtDefineTag>ART_DEF_FEATURE_EL_DORADO</ArtDefineTag>
 			<Movement>1</Movement>
 			<InfluenceCost>-1</InfluenceCost>
 			<NaturalWonder>true</NaturalWonder>
 			<NoImprovement>true</NoImprovement>
-			<OccurrenceFrequency>1000</OccurrenceFrequency>
+			<OccurrenceFrequency>500</OccurrenceFrequency>
 			<NoCity>True</NoCity>
 			<Rough>False</Rough>
 			<PortraitIndex>0</PortraitIndex>
@@ -38,7 +38,7 @@
 	<Natural_Wonder_Placement>
 		<Row>
 			<NaturalWonderType>FEATURE_NWVB_GEE</NaturalWonderType>
-			<OccurrenceFrequency>1000</OccurrenceFrequency>
+			<OccurrenceFrequency>500</OccurrenceFrequency>
 			<!-- via Natural Wonders Enhanced v1 -->
 			<AvoidLandAdjacentToOcean>true</AvoidLandAdjacentToOcean>
 			<AdjacentTilesCareAboutFeatureTypes>true</AdjacentTilesCareAboutFeatureTypes>
@@ -59,7 +59,7 @@
 		</Row>
 		<Row>
 			<NaturalWonderType>FEATURE_NWVB_FOP</NaturalWonderType>
-			<OccurrenceFrequency>1000</OccurrenceFrequency>
+			<OccurrenceFrequency>500</OccurrenceFrequency>
 			<!-- via Natural Wonders Enhanced v1 -->
 			<AvoidLandAdjacentToOcean>true</AvoidLandAdjacentToOcean>
 			<CoreTileCanBeAnyTerrainType>false</CoreTileCanBeAnyTerrainType>

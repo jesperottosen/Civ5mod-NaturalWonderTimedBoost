@@ -1,19 +1,18 @@
 ﻿<?xml version="1.0" encoding="utf-8"?>
-<Mod id="18a7bcc1-c7d2-45a4-aa98-a6debf27c2a8" version="2">
+<Mod id="18a7bcc1-c7d2-45a4-aa98-a6debf27c2a8" version="3">
   <Properties>
     <Name>Natural Wonder Victory Booster</Name>
     <Stability>Alpha</Stability>
-    <Teaser>Rework the Fountain of Youth and El Dorado Natural Wonders</Teaser>
-    <Description>XML
-- Remove standard Fountain of Youth and El Dorado (NFNE by Taurus)
-- Add custom Fountain of Policies, Golden Era El Dorado
-- Natural wonder placements settings by Leo
-
-LUA Unit into Custom Feature
-- set timer (conan.morris)
-- set plot owner (conan.morris)
-- set plot owner adjacent (conan.morris)
-- notify</Description>
+    <Teaser>Updated Fountain of Youth and El Dorado Natural Wonders</Teaser>
+    <Description>[NEWLINE]Fountain of Youth is now the Fountain of Policies
+[NEWLINE]El Dorado is now the Golden Eras El Dorado.
+[NEWLINE]
+[NEWLINE]
+Have a unit consistently on an updated Natural Wonder for a range of turns to received some random gold boost and either
+[NEWLINE][ICON_BULLET] A number of of free Policies
+[NEWLINE][ICON_BULLET] A number of Golden Eras
+[NEWLINE]
+After the award the Natural Wonder is reset for a range of turns, and the up for capture again.</Description>
     <Authors>yepzer</Authors>
     <SpecialThanks>Erik Taurus, Leo, conan.morris</SpecialThanks>
     <HideSetupGame>0</HideSetupGame>
@@ -38,8 +37,8 @@ LUA Unit into Custom Feature
   </References>
   <Blocks />
   <Files>
-    <File md5="84FFF2B81DDD341DB374C7089306E31A" import="0">LUA/doVictoryBooster.lua</File>
-    <File md5="76D0093A2714F880C4C9E692DE1F154A" import="0">XML/NWVB_Features.xml</File>
+    <File md5="CD5EB7BD211DD768EB842C50F1F927AF" import="0">LUA/doVictoryBooster.lua</File>
+    <File md5="2433CAB018D58886FF1DE6F43B4E4628" import="0">XML/NWVB_Features.xml</File>
     <File md5="61E16A802C0DB7AA780AF6487A444F32" import="0">XML/NFNE_Features.xml</File>
   </Files>
   <Actions>

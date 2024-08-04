@@ -5,19 +5,18 @@
     <ProjectGuid>{32ed3e57-4229-433b-8329-8ab70ff77ff1}</ProjectGuid>
     <Name>Natural Wonder Victory Booster</Name>
     <Guid>18a7bcc1-c7d2-45a4-aa98-a6debf27c2a8</Guid>
-    <ModVersion>2</ModVersion>
+    <ModVersion>3</ModVersion>
     <Stability>Alpha</Stability>
-    <Teaser>Rework the Fountain of Youth and El Dorado Natural Wonders</Teaser>
-    <Description>XML
-- Remove standard Fountain of Youth and El Dorado (NFNE by Taurus)
-- Add custom Fountain of Policies, Golden Era El Dorado
-- Natural wonder placements settings by Leo
-
-LUA Unit into Custom Feature
-- set timer (conan.morris)
-- set plot owner (conan.morris)
-- set plot owner adjacent (conan.morris)
-- notify</Description>
+    <Teaser>Updated Fountain of Youth and El Dorado Natural Wonders</Teaser>
+    <Description>[NEWLINE]Fountain of Youth is now the Fountain of Policies
+[NEWLINE]El Dorado is now the Golden Eras El Dorado.
+[NEWLINE]
+[NEWLINE]
+Have a unit consistently on an updated Natural Wonder for a range of turns to received some random gold boost and either
+[NEWLINE][ICON_BULLET] A number of of free Policies
+[NEWLINE][ICON_BULLET] A number of Golden Eras
+[NEWLINE]
+After the award the Natural Wonder is reset for a range of turns, and the up for capture again.</Description>
     <Authors>yepzer</Authors>
     <SpecialThanks>Erik Taurus, Leo, conan.morris</SpecialThanks>
     <AffectsSavedGames>true</AffectsSavedGames>
