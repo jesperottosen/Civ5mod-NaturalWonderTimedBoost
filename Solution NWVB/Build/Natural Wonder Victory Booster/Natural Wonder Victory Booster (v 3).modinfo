@@ -7,11 +7,11 @@
     <Description>[NEWLINE]Fountain of Youth is now the Fountain of Policies
 [NEWLINE]El Dorado is now the Golden Eras El Dorado.
 [NEWLINE]
-[NEWLINE]Have a unit consistently on an updated Natural Wonder for a range of turns to received some random gold boost and either
-[NEWLINE][ICON_BULLET] A number of of free Policies
-[NEWLINE][ICON_BULLET] A number of Golden Eras
+[NEWLINE]Have a unit consistently on an updated Natural Wonder for a range of turns to receive some random gold boost and either
+[NEWLINE][ICON_BULLET] Many free Policies (10)
+[NEWLINE][ICON_BULLET] Many free Golden Eras (10)
 [NEWLINE]
-[NEWLINE]After the award the Natural Wonder is reset for a range of turns, and the up for capture again.</Description>
+[NEWLINE]After the award, the Natural Wonder is reset for a range of turns, and then up for capture again.</Description>
     <Authors>yepzer</Authors>
     <SpecialThanks>Erik Taurus, Leo, conan.morris</SpecialThanks>
     <HideSetupGame>0</HideSetupGame>
