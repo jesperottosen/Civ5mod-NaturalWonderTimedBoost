@@ -6,11 +6,18 @@
 
 local cFOP = GameInfoTypes.FEATURE_NWVB_FOP
 local cGEE = GameInfoTypes.FEATURE_NWVB_GEE
-local cBOOSTER = 10
-local cTURNS_TO_BOOST = cBOOSTER * Game.CountCivPlayersAlive()
+local iHandicap = Game:GetHandicapType()
+local iNumPlayers = Game.CountCivPlayersAlive()
+
+local cBOOST_FOP = iNumPlayers
+local cBOOST_GEE = iNumPlayers * 10
+local cBOOST_GOLD = iNumPlayers * iHandicap * 1000
+local cTURNS_TO_BOOST = iNumPlayers * iHandicap
 local cMAX_CITY_DISTANCE = 5
 
-print("Loaded OK: "..cTURNS_TO_BOOST.." turns to boost "..cBOOSTER.." times")
+print("Loaded OK: "..cTURNS_TO_BOOST.." turns for "..cBOOST_FOP.." policies")
+print("Loaded OK: "..cTURNS_TO_BOOST.." turns for "..cBOOST_GEE.." golden eras")
+print("Loaded OK: "..cTURNS_TO_BOOST.." turns for "..cBOOST_GOLD.." gold")
 
 --------------------------------------------------------------
 -- connan.morris: Methods for finding plots in any direction from a given plot
@@ -162,25 +169,29 @@ function giveVictoryBoost(iPlayer,iFeatureType)
 	-- initiate
 	local sResult = ""
 	local pPlayer = Players[iPlayer]
-
-	local r = 1+Game.Rand(cBOOSTER, "NWVB: gold factor")
-	local more = r*100*cBOOSTER
-	local eGold = pPlayer:GetGold()
-	pPlayer:SetGold(eGold+more)
+	local iGold = pPlayer:GetGold()
+	pPlayer:SetGold(iGold+cBOOST_GOLD)
 
 	-- execute
 	if (iFeatureType == cGEE) then
-		sResult = cBOOSTER.." more Golden Ages and "
-		pPlayer:ChangeGoldenAgeTurns(cBOOSTER)
+		sResult = cBOOST_GEE.." more Golden Eras and "
+		local iEras = pPlayer:GetGoldenAgeLength()
+		pPlayer:ChangeGoldenAgeTurns(iEras+cBOOST_GEE)
 	end
 	if (iFeatureType == cFOP) then
-		sResult = cBOOSTER.." Free Policies and "
-		pPlayer:ChangeNumFreePolicies(cBOOSTER)
-		--pPlayer:SetPolicyBranchUnlocked(GameInfo.PolicyBranchTypes["POLICY_BRANCH_AUTOCRACY"].ID, true)
+		sResult = cBOOST_FOP.." Free Policies and "
+		pPlayer:ChangeNumFreePolicies(cBOOST_FOP)
+		pPlayer:SetPolicyBranchUnlocked(GameInfo.PolicyBranchTypes["POLICY_BRANCH_TRADITION"].ID, true)
+		pPlayer:SetPolicyBranchUnlocked(GameInfo.PolicyBranchTypes["POLICY_BRANCH_LIBERTY"].ID, true)
+		pPlayer:SetPolicyBranchUnlocked(GameInfo.PolicyBranchTypes["POLICY_BRANCH_HONOR"].ID, true)
+		pPlayer:SetPolicyBranchUnlocked(GameInfo.PolicyBranchTypes["POLICY_BRANCH_PIETY"].ID, true)
+		pPlayer:SetPolicyBranchUnlocked(GameInfo.PolicyBranchTypes["POLICY_BRANCH_PATRONAGE"].ID, true)
+		pPlayer:SetPolicyBranchUnlocked(GameInfo.PolicyBranchTypes["POLICY_BRANCH_COMMERCE"].ID, true)
+		pPlayer:SetPolicyBranchUnlocked(GameInfo.PolicyBranchTypes["POLICY_BRANCH_RATIONALISM"].ID, true)
 	end
 	
 	-- return
-	return sResult..more.." Gold"
+	return sResult..cBOOST_GOLD.." Gold"
 end
 
 --------------------------------------------------------------
