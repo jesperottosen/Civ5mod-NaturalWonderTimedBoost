@@ -29,7 +29,7 @@ If the timer belongs to no player (-1), release the timer for recapture.
 - El Dorado is now the Golden Eras El Dorado.
 
 Have a unit consistently on an updated Natural Wonder for a range of turns to receive some random gold boost and either
-- Many free Policies (10)
-- Many free Golden Eras (10)
+- Many free culture 
+- Many free Golden Eras 
 
 After the award, the Natural Wonder is reset for a range of turns, and then up for capture again.
