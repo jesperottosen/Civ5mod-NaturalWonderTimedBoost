@@ -5,8 +5,8 @@
     <ProjectGuid>{32ed3e57-4229-433b-8329-8ab70ff77ff1}</ProjectGuid>
     <Name>Natural Wonder Timed Boost</Name>
     <Guid>18a7bcc1-c7d2-45a4-aa98-a6debf27c2a8</Guid>
-    <ModVersion>3</ModVersion>
-    <Stability>Alpha</Stability>
+    <ModVersion>4</ModVersion>
+    <Stability>Beta</Stability>
     <Teaser>Updated Fountain of Youth and El Dorado Natural Wonders</Teaser>
     <Description>[NEWLINE]Fountain of Youth is now the Fountain of Culture
 [NEWLINE]El Dorado is now the Golden Eras El Dorado.
@@ -59,7 +59,7 @@
       <Action>
         <Set>OnModActivated</Set>
         <Type>UpdateDatabase</Type>
-        <FileName>XML/NWVB_Features.xml</FileName>
+        <FileName>XML/NWTB_Features.xml</FileName>
       </Action>
     </ModActions>
     <ModDependencies>
@@ -73,13 +73,14 @@
     </ModDependencies>
     <ReloadStrategicViewSystem>true</ReloadStrategicViewSystem>
     <ModContent>
-      <Content xmlns="">
+      <Content>
         <Type>InGameUIAddin</Type>
-        <Name>doVictoryBooster</Name>
-        <Description>doVictoryBooster</Description>
-        <FileName>LUA/doVictoryBooster.lua</FileName>
+        <Name>doTimedBoost</Name>
+        <Description>doTimedBoost</Description>
+        <FileName>LUA/doTimedBoost.lua</FileName>
       </Content>
     </ModContent>
+    <Homepage>https://github.com/jesperottosen/Civ5mod-NaturalWonderTimedBoost/</Homepage>
   </PropertyGroup>
   <PropertyGroup Condition=" '$(Configuration)' == 'Default' ">
     <OutputPath>.</OutputPath>
@@ -97,11 +98,11 @@
     <Folder Include="XML" />
   </ItemGroup>
   <ItemGroup>
-    <Content Include="LUA\doVictoryBooster.lua">
+    <Content Include="LUA\doTimedBoost.lua">
       <SubType>Lua</SubType>
       <ImportIntoVFS>False</ImportIntoVFS>
     </Content>
-    <Content Include="XML\NWVB_Features.xml">
+    <Content Include="XML\NWTB_Features.xml">
       <SubType>Lua</SubType>
       <ImportIntoVFS>False</ImportIntoVFS>
     </Content>

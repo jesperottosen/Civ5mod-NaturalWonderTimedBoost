@@ -1,7 +1,7 @@
 ﻿
 Microsoft Visual Studio Solution File, Format Version 11.00
 # ModBuddy Solution File, Format Version 11.00
-Project("{F5FC21B5-7CC2-458A-ABBA-992F515BBA20}") = "Natural Wonder Victory Booster", "Natural Wonder Victory Booster\Natural Wonder Victory Booster.civ5proj", "{32ED3E57-4229-433B-8329-8AB70FF77FF1}"
+Project("{F5FC21B5-7CC2-458A-ABBA-992F515BBA20}") = "Natural Wonder Timed Boost", "Natural Wonder Victory Booster\Natural Wonder Timed Boost.civ5proj", "{32ED3E57-4229-433B-8329-8AB70FF77FF1}"
 EndProject
 Global
 	GlobalSection(SolutionConfigurationPlatforms) = preSolution

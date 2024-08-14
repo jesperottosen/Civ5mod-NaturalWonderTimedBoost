@@ -1,8 +1,8 @@
 ﻿<?xml version="1.0" encoding="utf-8"?>
-<Mod id="18a7bcc1-c7d2-45a4-aa98-a6debf27c2a8" version="3">
+<Mod id="18a7bcc1-c7d2-45a4-aa98-a6debf27c2a8" version="4">
   <Properties>
-    <Name>Natural Wonder Victory Booster</Name>
-    <Stability>Alpha</Stability>
+    <Name>Natural Wonder Timed Boost</Name>
+    <Stability>Beta</Stability>
     <Teaser>Updated Fountain of Youth and El Dorado Natural Wonders</Teaser>
     <Description>[NEWLINE]Fountain of Youth is now the Fountain of Culture
 [NEWLINE]El Dorado is now the Golden Eras El Dorado.
@@ -36,20 +36,20 @@
   </References>
   <Blocks />
   <Files>
-    <File md5="F2DBBC67E171B5601047A36C6CE38756" import="0">LUA/doVictoryBooster.lua</File>
-    <File md5="DEB720C2484FDF10C1CDC09D93717786" import="0">XML/NWVB_Features.xml</File>
+    <File md5="BFF6539D5C723B69B7F0A8A1BD18404A" import="0">LUA/doTimedBoost.lua</File>
+    <File md5="FF19B8C3120C5388006920F7F8C58628" import="0">XML/NWTB_Features.xml</File>
     <File md5="61E16A802C0DB7AA780AF6487A444F32" import="0">XML/NFNE_Features.xml</File>
   </Files>
   <Actions>
     <OnModActivated>
       <UpdateDatabase>XML/NFNE_Features.xml</UpdateDatabase>
-      <UpdateDatabase>XML/NWVB_Features.xml</UpdateDatabase>
+      <UpdateDatabase>XML/NWTB_Features.xml</UpdateDatabase>
     </OnModActivated>
   </Actions>
   <EntryPoints>
-    <EntryPoint type="InGameUIAddin" file="LUA/doVictoryBooster.lua">
-      <Name>doVictoryBooster</Name>
-      <Description>doVictoryBooster</Description>
+    <EntryPoint type="InGameUIAddin" file="LUA/doTimedBoost.lua">
+      <Name>doTimedBoost</Name>
+      <Description>doTimedBoost</Description>
     </EntryPoint>
   </EntryPoints>
 </Mod>

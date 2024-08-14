@@ -1,0 +1,9 @@
+Updated Fountain of Youth and El Dorado Natural Wonders
+- Fountain of Youth is now the Fountain of Culture
+- El Dorado is now the Golden Eras El Dorado
+
+Have a unit consistently on an updated Natural Wonder for a range of turns to received some random gold boost and either
+- A number of of free culture
+- A number of golden eras
+
+After the award the Natural Wonder is reset for a range of turns, and the up for capture again.

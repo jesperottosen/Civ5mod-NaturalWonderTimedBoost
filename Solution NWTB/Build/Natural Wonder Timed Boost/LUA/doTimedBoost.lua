@@ -1,11 +1,11 @@
--- doVictoryBooster
+-- doTimedBoost
 -- Author: yepzer
 -- Original PlotMath and Timers by connan.morris
 -- DateCreated: 7/29/2024 10:19:46 AM
 --------------------------------------------------------------
 
-local cFOC = GameInfoTypes.FEATURE_NWVB_FOC
-local cGEE = GameInfoTypes.FEATURE_NWVB_GEE
+local cFOC = GameInfoTypes.FEATURE_NWTB_FOC
+local cGEE = GameInfoTypes.FEATURE_NWTB_GEE
 local iHandicap = Game:GetHandicapType()
 local iNumPlayers = Game.CountCivPlayersAlive()
 
@@ -165,7 +165,7 @@ function setPlotOwner(mapPlot, iNewPlotOwner)
 end
 
 --------------------------------------------------------------
-function giveVictoryBoost(iPlayer,iFeatureType)
+function giveTimedBoost(iPlayer,iFeatureType)
 	-- initiate
 	local sResult = ""
 	local pPlayer = Players[iPlayer]
@@ -192,8 +192,8 @@ end
 function getTimerActive(iFeatureType) 
 	-- initiate
 	local sKey = ""
-	if (iFeatureType == cFOC) then sKey="NWVB_FOC" end
-	if (iFeatureType == cGEE) then sKey="NWVB_GEE" end
+	if (iFeatureType == cFOC) then sKey="NWTB_FOC" end
+	if (iFeatureType == cGEE) then sKey="NWTB_GEE" end
 	if (sKey == "") then return nil end
 	local sFullkey = sKey.."_timer"
 
@@ -208,8 +208,8 @@ function setPlotOwnershipTimer(iFeatureType,iX,iY,iPlayer,iTurns)
 	-- initiate
 	local db = Modding.OpenSaveData()
 	local sKey = ""
-	if (iFeatureType == cFOC) then sKey="NWVB_FOC" end
-	if (iFeatureType == cGEE) then sKey="NWVB_GEE" end
+	if (iFeatureType == cFOC) then sKey="NWTB_FOC" end
+	if (iFeatureType == cGEE) then sKey="NWTB_GEE" end
 	if (sKey == "") then return end
 	local sFullkey = sKey.."_timer"
 
@@ -313,7 +313,7 @@ function updateTimer(sKey,iPlayer)
 				-- time is up, reset spot, restart timer 
 				claimTerritoryAroundHex(centerPlot, -1)
 				setPlotOwnershipTimer(iFeatureType,iX,iY,-1,cTURNS_TO_BOOST)
-				sResult = giveVictoryBoost(iPlayer,iFeatureType)
+				sResult = giveTimedBoost(iPlayer,iFeatureType)
 			end
 	
 			if (iTimer > 0) then
@@ -348,8 +348,8 @@ end
 --------------------------------------------------------------
 local function OnPlayerDoTurn(iPlayer)
 	if (iPlayer == 63) then return end
-	updateTimer("NWVB_FOC",iPlayer)
-	updateTimer("NWVB_GEE",iPlayer)
+	updateTimer("NWTB_FOC",iPlayer)
+	updateTimer("NWTB_GEE",iPlayer)
 end
 
 --------------------------------------------------------------
