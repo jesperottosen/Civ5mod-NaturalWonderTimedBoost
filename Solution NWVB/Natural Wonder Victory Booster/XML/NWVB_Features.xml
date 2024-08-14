@@ -4,9 +4,9 @@
 
 	<Features>
 		<Row>
-			<Type>FEATURE_NWVB_FOP</Type>
-			<Description>(NWVB) Fountain of Policies</Description>
-			<Civilopedia>Hold for a number of turns to receive a Fountain of Policies and some random gold.</Civilopedia>
+			<Type>FEATURE_NWVB_FOC</Type>
+			<Description>(NWVB) Fountain of Culture</Description>
+			<Civilopedia>Hold for a number of turns to receive a Fountain of Culture and some random gold.</Civilopedia>
 			<ArtDefineTag>ART_DEF_FEATURE_FOUNTAIN_YOUTH</ArtDefineTag>
 			<Movement>1</Movement>
 			<InfluenceCost>-3</InfluenceCost>
@@ -41,7 +41,7 @@
 
 	<Feature_YieldChanges>
 		<Row>
-			<FeatureType>FEATURE_NWVB_FOP</FeatureType>
+			<FeatureType>FEATURE_NWVB_FOC</FeatureType>
 			<YieldType>YIELD_FAITH</YieldType>
 			<Yield>1</Yield>
 		</Row>
@@ -75,7 +75,7 @@
 			<ChangeCoreTileTerrainToPlains>true</ChangeCoreTileTerrainToPlains> 
 		</Row>
 		<Row>
-			<NaturalWonderType>FEATURE_NWVB_FOP</NaturalWonderType>
+			<NaturalWonderType>FEATURE_NWVB_FOC</NaturalWonderType>
 			<OccurrenceFrequency>500</OccurrenceFrequency>
 			<!-- via Natural Wonders Enhanced v1 -->
 			<AvoidLandAdjacentToOcean>true</AvoidLandAdjacentToOcean>

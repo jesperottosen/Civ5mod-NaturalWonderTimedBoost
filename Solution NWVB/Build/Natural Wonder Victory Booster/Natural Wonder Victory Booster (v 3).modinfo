@@ -4,14 +4,14 @@
     <Name>Natural Wonder Victory Booster</Name>
     <Stability>Alpha</Stability>
     <Teaser>Updated Fountain of Youth and El Dorado Natural Wonders</Teaser>
-    <Description>[NEWLINE]Fountain of Youth is now the Fountain of Policies
+    <Description>[NEWLINE]Fountain of Youth is now the Fountain of Culture
 [NEWLINE]El Dorado is now the Golden Eras El Dorado.
 [NEWLINE]
-[NEWLINE]Have a unit consistently on an updated Natural Wonder for a range of turns to receive some random gold boost and either
-[NEWLINE][ICON_BULLET] Many free Policies (10)
-[NEWLINE][ICON_BULLET] Many free Golden Eras (10)
+[NEWLINE]Have a unit consistently on an updated Natural Wonder for a range of turns to received some random gold boost and either
+[NEWLINE][ICON_BULLET] A number of of free culture
+[NEWLINE][ICON_BULLET] A number of golden eras
 [NEWLINE]
-[NEWLINE]After the award, the Natural Wonder is reset for a range of turns, and then up for capture again.</Description>
+[NEWLINE]After the award the Natural Wonder is reset for a range of turns, and the up for capture again.</Description>
     <Authors>yepzer</Authors>
     <SpecialThanks>Erik Taurus, Leo, conan.morris</SpecialThanks>
     <HideSetupGame>0</HideSetupGame>
@@ -36,8 +36,8 @@
   </References>
   <Blocks />
   <Files>
-    <File md5="6CC1FC12E9D8E8BCEBBB8FB8647F9A09" import="0">LUA/doVictoryBooster.lua</File>
-    <File md5="2728A56D0B1E9E739AED8EFD1E273501" import="0">XML/NWVB_Features.xml</File>
+    <File md5="F2DBBC67E171B5601047A36C6CE38756" import="0">LUA/doVictoryBooster.lua</File>
+    <File md5="DEB720C2484FDF10C1CDC09D93717786" import="0">XML/NWVB_Features.xml</File>
     <File md5="61E16A802C0DB7AA780AF6487A444F32" import="0">XML/NFNE_Features.xml</File>
   </Files>
   <Actions>

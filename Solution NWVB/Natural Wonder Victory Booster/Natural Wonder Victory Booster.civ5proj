@@ -8,12 +8,12 @@
     <ModVersion>3</ModVersion>
     <Stability>Alpha</Stability>
     <Teaser>Updated Fountain of Youth and El Dorado Natural Wonders</Teaser>
-    <Description>[NEWLINE]Fountain of Youth is now the Fountain of Policies
+    <Description>[NEWLINE]Fountain of Youth is now the Fountain of Culture
 [NEWLINE]El Dorado is now the Golden Eras El Dorado.
 [NEWLINE]
 [NEWLINE]Have a unit consistently on an updated Natural Wonder for a range of turns to received some random gold boost and either
-[NEWLINE][ICON_BULLET] A number of of free Policies
-[NEWLINE][ICON_BULLET] A number of Golden Eras
+[NEWLINE][ICON_BULLET] A number of of free culture
+[NEWLINE][ICON_BULLET] A number of golden eras
 [NEWLINE]
 [NEWLINE]After the award the Natural Wonder is reset for a range of turns, and the up for capture again.</Description>
     <Authors>yepzer</Authors>

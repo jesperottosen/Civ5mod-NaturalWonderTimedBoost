@@ -4,18 +4,18 @@
 -- DateCreated: 7/29/2024 10:19:46 AM
 --------------------------------------------------------------
 
-local cFOP = GameInfoTypes.FEATURE_NWVB_FOP
+local cFOC = GameInfoTypes.FEATURE_NWVB_FOC
 local cGEE = GameInfoTypes.FEATURE_NWVB_GEE
 local iHandicap = Game:GetHandicapType()
 local iNumPlayers = Game.CountCivPlayersAlive()
 
-local cBOOST_FOP = iNumPlayers
+local cBOOST_FOC = iNumPlayers * 10
 local cBOOST_GEE = iNumPlayers * 10
 local cBOOST_GOLD = iNumPlayers * iHandicap * 1000
 local cTURNS_TO_BOOST = iNumPlayers * iHandicap
 local cMAX_CITY_DISTANCE = 5
 
-print("Loaded OK: "..cTURNS_TO_BOOST.." turns for "..cBOOST_FOP.." policies")
+print("Loaded OK: "..cTURNS_TO_BOOST.." turns for "..cBOOST_FOC.." culture")
 print("Loaded OK: "..cTURNS_TO_BOOST.." turns for "..cBOOST_GEE.." golden eras")
 print("Loaded OK: "..cTURNS_TO_BOOST.." turns for "..cBOOST_GOLD.." gold")
 
@@ -178,16 +178,10 @@ function giveVictoryBoost(iPlayer,iFeatureType)
 		local iEras = pPlayer:GetGoldenAgeLength()
 		pPlayer:ChangeGoldenAgeTurns(iEras+cBOOST_GEE)
 	end
-	if (iFeatureType == cFOP) then
-		sResult = cBOOST_FOP.." Free Policies and "
-		pPlayer:ChangeNumFreePolicies(cBOOST_FOP)
-		pPlayer:SetPolicyBranchUnlocked(GameInfo.PolicyBranchTypes["POLICY_BRANCH_TRADITION"].ID, true)
-		pPlayer:SetPolicyBranchUnlocked(GameInfo.PolicyBranchTypes["POLICY_BRANCH_LIBERTY"].ID, true)
-		pPlayer:SetPolicyBranchUnlocked(GameInfo.PolicyBranchTypes["POLICY_BRANCH_HONOR"].ID, true)
-		pPlayer:SetPolicyBranchUnlocked(GameInfo.PolicyBranchTypes["POLICY_BRANCH_PIETY"].ID, true)
-		pPlayer:SetPolicyBranchUnlocked(GameInfo.PolicyBranchTypes["POLICY_BRANCH_PATRONAGE"].ID, true)
-		pPlayer:SetPolicyBranchUnlocked(GameInfo.PolicyBranchTypes["POLICY_BRANCH_COMMERCE"].ID, true)
-		pPlayer:SetPolicyBranchUnlocked(GameInfo.PolicyBranchTypes["POLICY_BRANCH_RATIONALISM"].ID, true)
+	if (iFeatureType == cFOC) then
+		sResult = cBOOST_FOC.." free culture and "
+		local iCulture = pPlayer:GetJONSCulture()
+		pPlayer:ChangeJONSCulture(iCulture + cBOOST_FOC)
 	end
 	
 	-- return
@@ -198,7 +192,7 @@ end
 function getTimerActive(iFeatureType) 
 	-- initiate
 	local sKey = ""
-	if (iFeatureType == cFOP) then sKey="NWVB_FOP" end
+	if (iFeatureType == cFOC) then sKey="NWVB_FOC" end
 	if (iFeatureType == cGEE) then sKey="NWVB_GEE" end
 	if (sKey == "") then return nil end
 	local sFullkey = sKey.."_timer"
@@ -214,7 +208,7 @@ function setPlotOwnershipTimer(iFeatureType,iX,iY,iPlayer,iTurns)
 	-- initiate
 	local db = Modding.OpenSaveData()
 	local sKey = ""
-	if (iFeatureType == cFOP) then sKey="NWVB_FOP" end
+	if (iFeatureType == cFOC) then sKey="NWVB_FOC" end
 	if (iFeatureType == cGEE) then sKey="NWVB_GEE" end
 	if (sKey == "") then return end
 	local sFullkey = sKey.."_timer"
@@ -254,7 +248,7 @@ function doUnitPositionChanged(iPlayer,iUnit,iX,iY)
 	if ( pPlayer == nil ) then return end
 		
 	local iFeatureType = pPlot:GetFeatureType()	
-	if ((iFeatureType ~= cFOP) and (iFeatureType ~= cGEE)) then return end
+	if ((iFeatureType ~= cFOC) and (iFeatureType ~= cGEE)) then return end
 	local iTimer = getTimerActive(iFeatureType) 
 	
 	-- print("doUnitPositionChanged: Plot OK, Unit OK, Feature OK")
@@ -354,7 +348,7 @@ end
 --------------------------------------------------------------
 local function OnPlayerDoTurn(iPlayer)
 	if (iPlayer == 63) then return end
-	updateTimer("NWVB_FOP",iPlayer)
+	updateTimer("NWVB_FOC",iPlayer)
 	updateTimer("NWVB_GEE",iPlayer)
 end
 
