@@ -3,7 +3,7 @@
   <PropertyGroup>
     <Configuration Condition=" '$(Configuration)' == '' ">Default</Configuration>
     <ProjectGuid>{32ed3e57-4229-433b-8329-8ab70ff77ff1}</ProjectGuid>
-    <Name>Natural Wonder Victory Booster</Name>
+    <Name>Natural Wonder Timed Boost</Name>
     <Guid>18a7bcc1-c7d2-45a4-aa98-a6debf27c2a8</Guid>
     <ModVersion>3</ModVersion>
     <Stability>Alpha</Stability>
