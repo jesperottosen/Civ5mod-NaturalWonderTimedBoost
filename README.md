@@ -1,4 +1,5 @@
 # Civ5mod-NaturalWonderVictoryBooster
+![Updated Natural Wonders](https://github.com/jesperottosen/Civ5mod-NaturalWonderTimedBoost/blob/main/Steam%20description/NWTB%20both.png?raw=true)
 
 ## Installation
 Installation via Steam:
@@ -22,14 +23,3 @@ When the turns end (and it does for every player human, minor Civ etc), check if
 if there is an active timer, count it one down. If the time is up give a reward if the timer belongs to a player.
 After rewarding the player, clear the ownership of the surrounding plots. 
 If the timer belongs to no player (-1), release the timer for recapture.
-
-## Mod description on Steam
-*Updated Fountain of Youth and El Dorado Natural Wonders*
-- Fountain of Youth is now the Fountain of Policies
-- El Dorado is now the Golden Eras El Dorado.
-
-Have a unit consistently on an updated Natural Wonder for a range of turns to receive some random gold boost and either
-- Many free culture 
-- Many free Golden Eras 
-
-After the award, the Natural Wonder is reset for a range of turns, and then up for capture again.
