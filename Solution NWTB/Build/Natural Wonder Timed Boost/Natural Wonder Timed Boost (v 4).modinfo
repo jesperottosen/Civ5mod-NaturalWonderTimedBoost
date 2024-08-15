@@ -15,6 +15,7 @@
     <Authors>yepzer</Authors>
     <SpecialThanks>Erik Taurus, Leo, conan.morris</SpecialThanks>
     <HideSetupGame>0</HideSetupGame>
+    <Homepage>https://github.com/jesperottosen/Civ5mod-NaturalWonderTimedBoost/</Homepage>
     <AffectsSavedGames>1</AffectsSavedGames>
     <MinCompatibleSaveVersion>0</MinCompatibleSaveVersion>
     <SupportsSinglePlayer>1</SupportsSinglePlayer>
@@ -36,7 +37,7 @@
   </References>
   <Blocks />
   <Files>
-    <File md5="BFF6539D5C723B69B7F0A8A1BD18404A" import="0">LUA/doTimedBoost.lua</File>
+    <File md5="6636D20912D7AB61BDB5EFA783E0838B" import="0">LUA/doTimedBoost.lua</File>
     <File md5="FF19B8C3120C5388006920F7F8C58628" import="0">XML/NWTB_Features.xml</File>
     <File md5="61E16A802C0DB7AA780AF6487A444F32" import="0">XML/NFNE_Features.xml</File>
   </Files>

@@ -108,29 +108,28 @@ function setPlotOwner(mapPlot, iNewPlotOwner)
 	local pPlot = Map.GetPlot(mapPlot.xPosition, mapPlot.yPosition)
 	if (pPlot == nil) then return end
 	if (pPlot:IsCity()) then return end
-	local iPlotExistingOwner = pPlot:GetOwner()
-	if (iPlotExistingOwner == nil) then return end
+	local iExistingPlotOwner = pPlot:GetOwner()
+	if (iExistingPlotOwner == nil) then return end
 
 	local iSetCityTo = -1
-	local iSetOwnerTo = iPlotExistingOwner -- default is to keep the current owner
-	local x = pPlot:GetX()
-	local y = pPlot:GetY()
+	local iSetOwnerTo = iExistingPlotOwner -- default is to keep the current owner
+	local iX = pPlot:GetX()
+	local iY = pPlot:GetY()
 	
-	-- print("NewOwner OK, Plot OK, Existing Owner OK: "..iNewPlotOwner..","..x..","..y..","..iPlotExistingOwner)
+	-- print("NewOwner OK, Plot OK, Existing Owner OK: "..iNewPlotOwner..","..iX..","..iY..","..iExistingPlotOwner)
 	 
-
 	-- execute
 	if (iNewPlotOwner == -1) then
 		-- reset to nature unless there is a city close by
 		local bFoundCity = false
 
-		if (iPlotExistingOwner ~= -1) then
+		if (iExistingPlotOwner ~= -1) then
 			-- if there is an existing owner
-			for pCity in Players[iPlotExistingOwner]:Cities() do
+			for pCity in Players[iExistingPlotOwner]:Cities() do
 				-- iterate all cities
 				local pCityPlot = pCity:Plot()
-				if(Map.PlotDistance(pCityPlot:GetX(), pCityPlot:GetY(), x, y) < cMAX_CITY_DISTANCE) then
-					-- if the city is close, the city gets the ownership
+				if(Map.PlotDistance(pCityPlot:GetX(), pCityPlot:GetY(), iX, iY) < cMAX_CITY_DISTANCE) then
+					-- if the city is close, save the city ID and set bFoundCity true and stop 
 					iSetCityTo = pCity
 					iSetOwnerTo = pCity:GetOwner()
 					bFoundCity = true
@@ -144,16 +143,17 @@ function setPlotOwner(mapPlot, iNewPlotOwner)
 			iSetCityTo = -1
 		end
 	else
-		if (iPlotExistingOwner == -1) then
+		if (iExistingPlotOwner == -1) then
 			-- if the existing owner is nature/-1 then give it away
 				iSetOwnerTo = iNewPlotOwner
 				iSetCityTo = pPlot:GetPlotCity()
 		else
-			-- iNewPlotOwner can have the field from another actual player only if at war
-			if (iNewPlotOwner ~= iPlotExistingOwner) then
+			-- iNewPlotOwner can have the field from another actual player 
+			if (iNewPlotOwner ~= iExistingPlotOwner) then
 				local pNewTeam = Teams[iNewPlotOwner]
-				local iExistingTeam = Players[iPlotExistingOwner]:GetTeam()
+				local iExistingTeam = Players[iExistingPlotOwner]:GetTeam()
 				if (pNewTeam:IsAtWar(iExistingTeam) == true) then
+					-- only if at war
 					iSetOwnerTo = iNewPlotOwner
 					iSetCityTo = pPlot:GetPlotCity()
 				end
@@ -161,6 +161,7 @@ function setPlotOwner(mapPlot, iNewPlotOwner)
 		end
 	end
 	
+	-- return
 	pPlot:SetOwner(iSetOwnerTo,iSetCityTo,true,true)
 end
 
@@ -170,9 +171,9 @@ function giveTimedBoost(iPlayer,iFeatureType)
 	local sResult = ""
 	local pPlayer = Players[iPlayer]
 	local iGold = pPlayer:GetGold()
-	pPlayer:SetGold(iGold+cBOOST_GOLD)
-
+	
 	-- execute
+	pPlayer:SetGold(iGold+cBOOST_GOLD)
 	if (iFeatureType == cGEE) then
 		sResult = cBOOST_GEE.." more Golden Eras and "
 		local iEras = pPlayer:GetGoldenAgeLength()
@@ -181,7 +182,7 @@ function giveTimedBoost(iPlayer,iFeatureType)
 	if (iFeatureType == cFOC) then
 		sResult = cBOOST_FOC.." free culture and "
 		local iCulture = pPlayer:GetJONSCulture()
-		pPlayer:ChangeJONSCulture(iCulture + cBOOST_FOC)
+		pPlayer:ChangeJONSCulture(cBOOST_FOC ) -- + iCulture?
 	end
 	
 	-- return
@@ -200,11 +201,13 @@ function getTimerActive(iFeatureType)
 	-- execute
 	local db = Modding.OpenSaveData()
 	local iTimer = db.GetValue(sFullkey)
+
+	-- return
 	return iTimer
 end
 
 --------------------------------------------------------------
-function setPlotOwnershipTimer(iFeatureType,iX,iY,iPlayer,iTurns)
+function setTimer(iFeatureType,iX,iY,iPlayer,iTurns)
 	-- initiate
 	local db = Modding.OpenSaveData()
 	local sKey = ""
@@ -213,6 +216,13 @@ function setPlotOwnershipTimer(iFeatureType,iX,iY,iPlayer,iTurns)
 	if (sKey == "") then return end
 	local sFullkey = sKey.."_timer"
 
+	-- execute
+	db.SetValue(sFullkey, iTurns)
+	db.SetValue(sKey.."_owner", iPlayer)
+	db.SetValue(sKey.."_x",iX)
+	db.SetValue(sKey.."_y",iY)
+
+	-- Notify
 	local sPlayer = ""
 	if (iPlayer == nil) then sPlayer = "Nature" end
 	if (iPlayer == -1) then sPlayer = "Resetting" end
@@ -226,13 +236,7 @@ function setPlotOwnershipTimer(iFeatureType,iX,iY,iPlayer,iTurns)
 	if (iTurns ~=nil) then sTurns=iTurns end
 
 	local sFeatureType = GameInfo.Features[iFeatureType].Description
-	print ("setPlotOwnershipTimer: "..sPlayer.." : "..sFeatureType.." for "..sTurns)
-
-	-- execute
-	db.SetValue(sFullkey, iTurns)
-	db.SetValue(sKey.."_owner", iPlayer)
-	db.SetValue(sKey.."_x",iX)
-	db.SetValue(sKey.."_y",iY)
+	print ("setTimer: "..sPlayer.." : "..sFeatureType.." for "..sTurns)
 end
 
 --------------------------------------------------------------
@@ -257,19 +261,24 @@ function doUnitPositionChanged(iPlayer,iUnit,iX,iY)
 
 	-- Execute
 	if (iTimer ~= nil) then 
+		-- there is an existing timer
 		sResult = "Timer is on for "..sFeature.. ": "..iTimer
 	else
+		-- there is no existing timer
 		local centerPlot = {}
 		centerPlot.xPosition = iX
 		centerPlot.yPosition = iY
 		claimTerritoryAroundHex(centerPlot, iPlayer)
-		setPlotOwnershipTimer(iFeatureType,iX,iY,iPlayer,cTURNS_TO_BOOST)
+		setTimer(iFeatureType,iX,iY,iPlayer,cTURNS_TO_BOOST)
 		sResult = "Hold "..sFeature.." for "..cTURNS_TO_BOOST.." turns"
 	end
 		
 	-- Notify	
-	local iNotifyType = NotificationTypes["NOTIFICATION_GOLDEN_AGE_BEGUN_ACTIVE_PLAYER"]
-	pPlayer:AddNotification(iNotifyType, sResult, sResult, iX, iY)	
+	if (sResult ~= "") then
+		-- notify only if sResult has text
+		local iNotifyType = NotificationTypes["NOTIFICATION_GOLDEN_AGE_BEGUN_ACTIVE_PLAYER"]
+		pPlayer:AddNotification(iNotifyType, sResult, sResult, iX, iY)	
+	end
 end
 
 --------------------------------------------------------------
@@ -305,20 +314,20 @@ function updateTimer(sKey,iPlayer)
 		if (pUnit == nil) then 
 			-- if no unit on the plot releases the spot totally
 			claimTerritoryAroundHex(centerPlot, -1)
-			setPlotOwnershipTimer(iFeatureType,nil,nil,nil,nil)
+			setTimer(iFeatureType,nil,nil,nil,nil)
 			sResult = "Wonder Lost"
 		else
 			-- there is a unit holding the spot			
 			if (iTimer == 0 ) then 
 				-- time is up, reset spot, restart timer 
 				claimTerritoryAroundHex(centerPlot, -1)
-				setPlotOwnershipTimer(iFeatureType,iX,iY,-1,cTURNS_TO_BOOST)
+				setTimer(iFeatureType,iX,iY,-1,cTURNS_TO_BOOST)
 				sResult = giveTimedBoost(iPlayer,iFeatureType)
 			end
 	
 			if (iTimer > 0) then
 				-- time is not yet up, count down the timer
-				setPlotOwnershipTimer(iFeatureType,iX,iY,iPlayer,iTimer-1)
+				setTimer(iFeatureType,iX,iY,iPlayer,iTimer-1)
 				-- sResult = "Counting down to Boost "..iTimer-1
 			end
 		end
@@ -328,17 +337,18 @@ function updateTimer(sKey,iPlayer)
 		-- If Owner is -1 then count down timer to reset it again
 		-- but only once (for player 0), not any others
 		if (iTimer == 0 ) then
-			setPlotOwnershipTimer(iFeatureType,nil,nil,nil,nil)
+			setTimer(iFeatureType,nil,nil,nil,nil)
 			sResult = "A Wonder is released for recapture"
 		end
 		if (iTimer > 0 ) then
-			setPlotOwnershipTimer(iFeatureType,iX,iY,-1,iTimer-1)
+			setTimer(iFeatureType,iX,iY,-1,iTimer-1)
 			-- sResult = "Counting down for reset "..iTimer-1
 		end
 	end 
 		
 	-- Notify
 	if (sResult ~= "") then
+		-- notify only if sResult has text
 		local pPlayer = Players[iPlayer]
 		local iNotifyType = NotificationTypes["NOTIFICATION_GOLDEN_AGE_ENDED_ACTIVE_PLAYER"]
 		pPlayer:AddNotification(iNotifyType, sResult, sResult, iX, iY)	
@@ -347,7 +357,7 @@ end
 
 --------------------------------------------------------------
 local function OnPlayerDoTurn(iPlayer)
-	if (iPlayer == 63) then return end
+	if (iPlayer == 63) then return end --skip for barbarians turn
 	updateTimer("NWTB_FOC",iPlayer)
 	updateTimer("NWTB_GEE",iPlayer)
 end
