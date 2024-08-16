@@ -1,5 +1,5 @@
 # Civ5mod-NaturalWonderVictoryBooster
-![Updated Natural Wonders](https://github.com/jesperottosen/Civ5mod-NaturalWonderTimedBoost/blob/main/Steam%20description/NWTB%20both.png?raw=true)
+![Updated Natural Wonders](https://github.com/jesperottosen/Civ5mod-NaturalWonderTimedBoost/blob/main/Steam%20description/NWTB%20front.jpg?raw=true)
 
 ## Installation
 Installation via Steam:
