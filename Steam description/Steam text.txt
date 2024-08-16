@@ -1,9 +1,11 @@
-Updated Fountain of Youth and El Dorado Natural Wonders
+Three Natural Wonders give delayed boosts
 - Fountain of Youth is now the Fountain of Culture
-- El Dorado is now the Golden Eras El Dorado
+- El Dorado is now the Golden Eras El Dorado.
+- King Solomon's Mines is now Gold of King Solomon
 
-Have a unit consistently on an updated Natural Wonder for a range of turns to received some random gold boost and either
-- A number of of free culture
-- A number of golden eras
+Have a unit consistently on an updated Natural Wonder for a range of turns to receive: 
+- A fountain of free culture
+- A load of golden eras
+- A huge number of gold
 
 After the award the Natural Wonder is reset for a range of turns, and the up for capture again.

@@ -6,18 +6,19 @@
 
 local cFOC = GameInfoTypes.FEATURE_NWTB_FOC
 local cGEE = GameInfoTypes.FEATURE_NWTB_GEE
+local cGKS = GameInfoTypes.FEATURE_NWTB_GKS
 local iHandicap = Game:GetHandicapType()
 local iNumPlayers = Game.CountCivPlayersAlive()
 
 local cBOOST_FOC = iNumPlayers * 10
 local cBOOST_GEE = iNumPlayers * 10
-local cBOOST_GOLD = iNumPlayers * iHandicap * 1000
+local cBOOST_GKS = iNumPlayers * iHandicap * 1000
 local cTURNS_TO_BOOST = iNumPlayers * iHandicap
 local cMAX_CITY_DISTANCE = 5
 
 print("Loaded OK: "..cTURNS_TO_BOOST.." turns for "..cBOOST_FOC.." culture")
 print("Loaded OK: "..cTURNS_TO_BOOST.." turns for "..cBOOST_GEE.." golden eras")
-print("Loaded OK: "..cTURNS_TO_BOOST.." turns for "..cBOOST_GOLD.." gold")
+print("Loaded OK: "..cTURNS_TO_BOOST.." turns for "..cBOOST_GKS.." gold")
 
 --------------------------------------------------------------
 -- connan.morris: Methods for finding plots in any direction from a given plot
@@ -170,23 +171,26 @@ function giveTimedBoost(iPlayer,iFeatureType)
 	-- initiate
 	local sResult = ""
 	local pPlayer = Players[iPlayer]
-	local iGold = pPlayer:GetGold()
 	
 	-- execute
-	pPlayer:SetGold(iGold+cBOOST_GOLD)
+	if (iFeatureType == cGKS) then
+		sResult = cBOOST_GKS.." gold."
+		local iGold = pPlayer:GetGold()
+		pPlayer:SetGold(iGold+cBOOST_GKS)
+	end
 	if (iFeatureType == cGEE) then
-		sResult = cBOOST_GEE.." more Golden Eras and "
+		sResult = cBOOST_GEE.." more Golden Eras."
 		local iEras = pPlayer:GetGoldenAgeLength()
 		pPlayer:ChangeGoldenAgeTurns(iEras+cBOOST_GEE)
 	end
 	if (iFeatureType == cFOC) then
-		sResult = cBOOST_FOC.." free culture and "
+		sResult = cBOOST_FOC.." free culture."
 		local iCulture = pPlayer:GetJONSCulture()
-		pPlayer:ChangeJONSCulture(cBOOST_FOC ) -- + iCulture?
+		pPlayer:ChangeJONSCulture(cBOOST_FOC ) 
 	end
 	
 	-- return
-	return sResult..cBOOST_GOLD.." Gold"
+	return sResult
 end
 
 --------------------------------------------------------------
@@ -195,6 +199,7 @@ function getTimerActive(iFeatureType)
 	local sKey = ""
 	if (iFeatureType == cFOC) then sKey="NWTB_FOC" end
 	if (iFeatureType == cGEE) then sKey="NWTB_GEE" end
+	if (iFeatureType == cGKS) then sKey="NWTB_GKS" end
 	if (sKey == "") then return nil end
 	local sFullkey = sKey.."_timer"
 
@@ -213,6 +218,7 @@ function setTimer(iFeatureType,iX,iY,iPlayer,iTurns)
 	local sKey = ""
 	if (iFeatureType == cFOC) then sKey="NWTB_FOC" end
 	if (iFeatureType == cGEE) then sKey="NWTB_GEE" end
+	if (iFeatureType == cGKS) then sKey="NWTB_GKS" end
 	if (sKey == "") then return end
 	local sFullkey = sKey.."_timer"
 
@@ -252,7 +258,7 @@ function doUnitPositionChanged(iPlayer,iUnit,iX,iY)
 	if ( pPlayer == nil ) then return end
 		
 	local iFeatureType = pPlot:GetFeatureType()	
-	if ((iFeatureType ~= cFOC) and (iFeatureType ~= cGEE)) then return end
+	if ((iFeatureType ~= cFOC) and (iFeatureType ~= cGEE) and (iFeatureType ~= cGKS)) then return end
 	local iTimer = getTimerActive(iFeatureType) 
 	
 	-- print("doUnitPositionChanged: Plot OK, Unit OK, Feature OK")
@@ -360,6 +366,7 @@ local function OnPlayerDoTurn(iPlayer)
 	if (iPlayer == 63) then return end --skip for barbarians turn
 	updateTimer("NWTB_FOC",iPlayer)
 	updateTimer("NWTB_GEE",iPlayer)
+	updateTimer("NWTB_GKS",iPlayer)
 end
 
 --------------------------------------------------------------
