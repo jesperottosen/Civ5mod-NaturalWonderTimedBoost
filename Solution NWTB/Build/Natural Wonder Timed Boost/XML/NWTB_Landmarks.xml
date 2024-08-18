@@ -1,0 +1,72 @@
+<?xml version="1.0" encoding="utf-8"?>
+<!-- Created by yepzer on 8/18/2024 4:41:33 PM -->
+<GameData>
+	<ArtDefine_Landmarks>
+		<Row>
+			<Era>Any</Era>
+			<State>Any</State>
+			<Scale>1.0</Scale>
+			<Model>Feature_Fountain_of_Youth/fountain_of_youth.fxsxml</Model>
+			<LayoutHandler>SNAPSHOT</LayoutHandler>
+			<ResourceType>ART_DEF_FEATURE_NWTB_FOC</ResourceType>
+			<ImprovementType>ART_DEF_IMPROVEMENT_NONE</ImprovementType>
+			<TerrainContour>1</TerrainContour>
+		</Row>
+		<Row>
+			<Era>Any</Era>
+			<State>Any</State>
+			<Scale>0.9</Scale>
+			<Model>Feature_El_Dorado/el_dorado.fxsxml</Model>
+			<LayoutHandler>SNAPSHOT</LayoutHandler>
+			<ResourceType>ART_DEF_FEATURE_NWTB_GEE</ResourceType>
+			<ImprovementType>ART_DEF_IMPROVEMENT_NONE</ImprovementType>
+			<TerrainContour>1</TerrainContour>
+		</Row>
+		<Row>
+			<Era>Any</Era>
+			<State>Any</State>
+			<Scale>1.0</Scale>
+			<Model>Feature_Solomon_Mine.fxsxml</Model>
+			<LayoutHandler>SNAPSHOT</LayoutHandler>
+			<ResourceType>ART_DEF_FEATURE_NWTB_GKS</ResourceType>
+			<ImprovementType>ART_DEF_IMPROVEMENT_NONE</ImprovementType>
+			<TerrainContour>1</TerrainContour>
+		</Row>
+	</ArtDefine_Landmarks>
+	
+	<ArtDefine_LandmarkTypes>
+		<Row>
+			<Type>ART_DEF_FEATURE_NWTB_FOC</Type>
+			<LandmarkType>Resource</LandmarkType>
+			<FriendlyName>(NWTB) Fountain of Culture</FriendlyName>
+		</Row>
+		<Row>
+			<Type>ART_DEF_FEATURE_NWTB_GEE</Type>
+			<LandmarkType>Resource</LandmarkType>
+			<FriendlyName>(NWTB) Golden Era El Dorado</FriendlyName>
+		</Row>
+		<Row>
+			<Type>ART_DEF_FEATURE_NWTB_GKS</Type>
+			<LandmarkType>Resource</LandmarkType>
+			<FriendlyName>(NWTB) Gold of King Solomon</FriendlyName>
+		</Row>
+	</ArtDefine_LandmarkTypes>
+
+	<ArtDefine_StrategicView>
+		<Row>
+			<StrategicViewType>ART_DEF_FEATURE_NWTB_FOC</StrategicViewType>
+			<TileType>Feature</TileType>
+			<Asset>SV_Fountain_of_Youth.dds</Asset>
+		</Row>
+		<Row>
+			<StrategicViewType>ART_DEF_FEATURE_NWTB_GEE</StrategicViewType>
+			<TileType>Feature</TileType>
+			<Asset>SV_El_Dorado.dds</Asset>
+		</Row>
+		<Row>
+			<StrategicViewType>ART_DEF_FEATURE_NWTB_GKS</StrategicViewType>
+			<TileType>Feature</TileType>
+			<Asset>SV_KingSolomonsMine.dds</Asset>
+		</Row>	
+	</ArtDefine_StrategicView>
+</GameData>

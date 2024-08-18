@@ -2,6 +2,7 @@
 <Mod id="18a7bcc1-c7d2-45a4-aa98-a6debf27c2a8" version="5">
   <Properties>
     <Name>Natural Wonder Timed Boost</Name>
+    <Stability>Beta</Stability>
     <Teaser>Three Natural Wonders give delayed boosts</Teaser>
     <Description>[NEWLINE]Fountain of Youth is now the Fountain of Culture
 [NEWLINE]El Dorado is now the Golden Eras El Dorado.
@@ -42,13 +43,15 @@
   </Blocks>
   <Files>
     <File md5="D480CDE73C8421A3B378D36A0F1F0707" import="0">LUA/doTimedBoost.lua</File>
-    <File md5="F76EB5BBC915BE744AC047E53554C728" import="0">XML/NWTB_Features.xml</File>
-    <File md5="DC84024DBAAA27342947C82F2A268CFB" import="0">XML/NFNE_Features.xml</File>
+    <File md5="741E0FE27E2C0ED5ACF675876420940A" import="0">XML/NWTB_Landmarks.xml</File>
+    <File md5="16394909ABD25810DCFC3DD3230BB0C3" import="0">XML/NWTB_UpdatedWonders.xml</File>
+    <File md5="302E42E2E2D0677415AA7214108F428B" import="0">XML/NWTB_Remove.xml</File>
   </Files>
   <Actions>
     <OnModActivated>
-      <UpdateDatabase>XML/NFNE_Features.xml</UpdateDatabase>
-      <UpdateDatabase>XML/NWTB_Features.xml</UpdateDatabase>
+      <UpdateDatabase>XML/NWTB_Remove.xml</UpdateDatabase>
+      <UpdateDatabase>XML/NWTB_UpdatedWonders.xml</UpdateDatabase>
+      <UpdateDatabase>XML/NWTB_Landmarks.xml</UpdateDatabase>
     </OnModActivated>
   </Actions>
   <EntryPoints>

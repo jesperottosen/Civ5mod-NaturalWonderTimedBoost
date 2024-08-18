@@ -1,0 +1,40 @@
+<?xml version="1.0" encoding="utf-8"?>
+<!-- Created by Erik Taurus using ModBuddy on 1/4/2013 4:53:30 PM -->
+<GameData>
+	<!-- Via NoFoYNoEldorado v1 -->
+	<Features>
+		<Delete Type="FEATURE_FOUNTAIN_YOUTH"/>
+		<Delete Type="FEATURE_EL_DORADO"/>
+		<Delete Type="FEATURE_SOLOMONS_MINES"/>
+	</Features>
+	
+	<Feature_YieldChanges>
+		<Delete>
+			<FeatureType>FEATURE_SOLOMONS_MINES</FeatureType>
+		</Delete>
+		<Delete>
+			<FeatureType>FEATURE_EL_DORADO</FeatureType>
+		</Delete>
+		<Delete>
+			<FeatureType>FEATURE_FOUNTAIN_YOUTH</FeatureType>
+		</Delete>
+	</Feature_YieldChanges>
+	
+	<Natural_Wonder_Placement>
+		<Delete NaturalWonderType="FEATURE_SOLOMONS_MINES"/>
+		<Delete NaturalWonderType="FEATURE_EL_DORADO"/>
+		<Delete NaturalWonderType="FEATURE_FOUNTAIN_YOUTH"/>
+	</Natural_Wonder_Placement>
+
+	<ArtDefine_Landmarks>
+		<Delete ResourceType="ART_DEF_FEATURE_FOUNTAIN_YOUTH"/>
+		<Delete ResourceType="FEATURE_EL_DORADO"/>
+		<Delete ResourceType="FEATURE_SOLOMONS_MINES"/>
+	</ArtDefine_Landmarks>
+
+	<ArtDefine_LandmarkTypes>
+		<Delete Type="ART_DEF_FEATURE_FOUNTAIN_YOUTH"/>
+		<Delete Type="FEATURE_EL_DORADO"/>
+		<Delete Type="FEATURE_SOLOMONS_MINES"/>
+	</ArtDefine_LandmarkTypes>
+</GameData>

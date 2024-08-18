@@ -6,7 +6,7 @@
     <Name>Natural Wonder Timed Boost</Name>
     <Guid>18a7bcc1-c7d2-45a4-aa98-a6debf27c2a8</Guid>
     <ModVersion>5</ModVersion>
-    <Stability>Stable</Stability>
+    <Stability>Beta</Stability>
     <Teaser>Three Natural Wonders give delayed boosts</Teaser>
     <Description>[NEWLINE]Fountain of Youth is now the Fountain of Culture
 [NEWLINE]El Dorado is now the Golden Eras El Dorado.
@@ -56,12 +56,17 @@
       <Action>
         <Set>OnModActivated</Set>
         <Type>UpdateDatabase</Type>
-        <FileName>XML/NFNE_Features.xml</FileName>
+        <FileName>XML/NWTB_Remove.xml</FileName>
       </Action>
       <Action>
         <Set>OnModActivated</Set>
         <Type>UpdateDatabase</Type>
-        <FileName>XML/NWTB_Features.xml</FileName>
+        <FileName>XML/NWTB_UpdatedWonders.xml</FileName>
+      </Action>
+      <Action>
+        <Set>OnModActivated</Set>
+        <Type>UpdateDatabase</Type>
+        <FileName>XML/NWTB_Landmarks.xml</FileName>
       </Action>
     </ModActions>
     <ModDependencies>
@@ -120,11 +125,15 @@
       <SubType>Lua</SubType>
       <ImportIntoVFS>False</ImportIntoVFS>
     </Content>
-    <Content Include="XML\NWTB_Features.xml">
+    <Content Include="XML\NWTB_Landmarks.xml">
       <SubType>Lua</SubType>
       <ImportIntoVFS>False</ImportIntoVFS>
     </Content>
-    <Content Include="XML\NFNE_Features.xml">
+    <Content Include="XML\NWTB_UpdatedWonders.xml">
+      <SubType>Lua</SubType>
+      <ImportIntoVFS>False</ImportIntoVFS>
+    </Content>
+    <Content Include="XML\NWTB_Remove.xml">
       <SubType>Lua</SubType>
       <ImportIntoVFS>False</ImportIntoVFS>
     </Content>
