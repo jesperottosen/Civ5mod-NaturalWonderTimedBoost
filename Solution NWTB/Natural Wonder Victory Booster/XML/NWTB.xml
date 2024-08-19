@@ -1,0 +1,104 @@
+<?xml version="1.0" encoding="utf-8"?>
+<!-- Created by yepzer on 8/19/2024 2:01:05 PM -->
+<GameData>
+	
+	<Features>
+		<Update>
+			<Where Type="FEATURE_EL_DORADO"/>
+			<Set 
+				Description="Golden Eras El Dorado (NWTB)"
+				Help="Hold for a number of turns to receive Golden Eras. (NWTB)."
+				OccurrenceFrequency="20"
+				Impassable="false" 
+				InBorderHappiness="1" 
+				FirstFinderGold="0"
+				AdjacentUnitFreePromotion=""
+				NoCity="true"
+				Defense="20"/>
+		</Update>
+		<Update>
+			<Where Type="FEATURE_FOUNTAIN_YOUTH"/>
+			<Set
+				Description="Fountain of Culture (NWTB)"
+				Help="Hold for a number of turns to receive a Fountain of Culture (NWTB)."
+				OccurrenceFrequency="20"
+				Impassable="false"
+				InBorderHappiness="1"
+				FirstFinderGold="0"
+				AdjacentUnitFreePromotion=""
+				NoCity="true"
+				Defense="20"/>
+		</Update>
+		<Update>
+			<Where Type="FEATURE_SOLOMONS_MINES"/>
+			<Set
+				Description="Gold of King Solomon (NWTB)"
+				Help="Hold for a number of turns to receive all the King Solomons Gold (NWTB)."
+				OccurrenceFrequency="20"
+				Impassable="false"
+				InBorderHappiness="1"
+				FirstFinderGold="0"
+				AdjacentUnitFreePromotion=""
+				NoCity="true"
+				Defense="20"/>
+		</Update>	
+	</Features>
+
+	<Natural_Wonder_Placement>
+		<Update>
+			<Where Type="FEATURE_EL_DORADO"/>
+			<Set OccurrenceFrequency="20"			
+				 AdjacentTilesCareAboutFeatureTypes="false"
+				 AdjacentTilesRequireJungle="false"
+				 RequiredNumberOfAdjacentJungle="0"/>
+		</Update>
+		<Update>
+			<Where Type="FEATURE_FOUNTAIN_YOUTH"/>
+			<Set OccurrenceFrequency="20"/>
+		</Update>
+		<Update>
+			<Where Type="FEATURE_SOLOMONS_MINES"/>
+			<Set OccurrenceFrequency="20"
+				 AdjacentTilesCareAboutPlotTypes="false"
+				 AdjacentTilesAvoidMountain="false"
+				 MaximumAllowedAdjacentMountain="0"/>
+		</Update>
+	</Natural_Wonder_Placement>
+	
+	<Feature_YieldChanges>
+		<Delete FeatureType="FEATURE_FOUNTAIN_YOUTH"/>
+		<Delete FeatureType="FEATURE_EL_DORADO"/>
+		<Delete FeatureType="FEATURE_SOLOMONS_MINES"/>
+		<Row>
+			<FeatureType>FEATURE_FOUNTAIN_YOUTH</FeatureType>
+			<YieldType>YIELD_SCIENCE</YieldType>
+			<Yield>1</Yield>
+		</Row>
+		<Row>
+			<FeatureType>FEATURE_EL_DORADO</FeatureType>
+			<YieldType>YIELD_SCIENCE</YieldType>
+			<Yield>1</Yield>
+		</Row>
+		<Row>
+			<FeatureType>FEATURE_SOLOMONS_MINES</FeatureType>
+			<YieldType>YIELD_SCIENCE</YieldType>
+			<Yield>1</Yield>
+		</Row>
+		<Row>
+			<FeatureType>FEATURE_FOUNTAIN_YOUTH</FeatureType>
+			<YieldType>YIELD_FAITH</YieldType>
+			<Yield>1</Yield>
+		</Row>
+		<Row>
+			<FeatureType>FEATURE_EL_DORADO</FeatureType>
+			<YieldType>YIELD_FAITH</YieldType>
+			<Yield>1</Yield>
+		</Row>
+		<Row>
+			<FeatureType>FEATURE_SOLOMONS_MINES</FeatureType>
+			<YieldType>YIELD_FAITH</YieldType>
+			<Yield>1</Yield>
+		</Row>
+	</Feature_YieldChanges>
+	
+</GameData>

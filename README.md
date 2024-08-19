@@ -1,15 +1,18 @@
 # Civ5mod-NaturalWonderVictoryBooster
-![Updated Natural Wonders](https://github.com/jesperottosen/Civ5mod-NaturalWonderTimedBoost/blob/main/Steam%20description/NWTB%20front.jpg?raw=true)
+![Updated Natural Wonders](https://github.com/jesperottosen/Civ5mod-NaturalWonderTimedBoost/blob/main/Steam%20description/NWTB_front.jpg?raw=true)
 
 ## Installation
 Installation via Steam:
 Or by downloading the most recent civ5mod-files from the Build folder.
+Not combatible with mods that also modify the three wonders.
 
-## Mod design
+## Mod design v6
+After inkering long with the new wonders not rendering  correctly, I realized that instead of creating new wonders in the database, I could update the existing wonders. This enabled them to render nicely, made the XML much simpler - and the LUA change was a simple config change. I still used Natural Wonders Enhanced by Leo as and example andthen the mod Really Advanced Setup by General Tsao to give me an exact occurance of them all.
+
+## Mod design v1-5
 First I removed the existing El Dorado and Fountain of Youth wonders using a small mod developed by Erik Taurus.
 Then I add them back in with new names and wonder placement. Definition inspired by Natural Wonders Enhanced by Leo.
 The core LUA file and functions are inspired by the Fortress With Borders mod by conan.morris.
-
 Discovering one of the updated natural wonders trickers a turn timer being counted down each turn. When the time is up a reward is given and the timer starts over. 
 The timer restarting after the reward makes the player wait around before triggering the reward again.
 

@@ -4,9 +4,9 @@
 -- DateCreated: 7/29/2024 10:19:46 AM
 --------------------------------------------------------------
 
-local cFOC = GameInfoTypes.FEATURE_NWTB_FOC
-local cGEE = GameInfoTypes.FEATURE_NWTB_GEE
-local cGKS = GameInfoTypes.FEATURE_NWTB_GKS
+local cFOC = GameInfoTypes.FEATURE_FOUNTAIN_YOUTH
+local cGEE = GameInfoTypes.FEATURE_EL_DORADO
+local cGKS = GameInfoTypes.FEATURE_SOLOMONS_MINES
 local iHandicap = Game:GetHandicapType()
 local iNumPlayers = Game.CountCivPlayersAlive()
 
