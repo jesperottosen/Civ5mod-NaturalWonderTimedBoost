@@ -8,7 +8,7 @@
 			<Set 
 				Description="Golden Eras El Dorado (NWTB)"
 				Help="Hold for a number of turns to receive Golden Eras. (NWTB)."
-				OccurrenceFrequency="20"
+				OccurrenceFrequency="10"
 				Impassable="false" 
 				InBorderHappiness="1" 
 				FirstFinderGold="0"
@@ -21,7 +21,7 @@
 			<Set
 				Description="Fountain of Culture (NWTB)"
 				Help="Hold for a number of turns to receive a Fountain of Culture (NWTB)."
-				OccurrenceFrequency="20"
+				OccurrenceFrequency="10"
 				Impassable="false"
 				InBorderHappiness="1"
 				FirstFinderGold="0"
@@ -34,7 +34,7 @@
 			<Set
 				Description="Gold of King Solomon (NWTB)"
 				Help="Hold for a number of turns to receive all the King Solomons Gold (NWTB)."
-				OccurrenceFrequency="20"
+				OccurrenceFrequency="10"
 				Impassable="false"
 				InBorderHappiness="1"
 				FirstFinderGold="0"
@@ -47,18 +47,18 @@
 	<Natural_Wonder_Placement>
 		<Update>
 			<Where Type="FEATURE_EL_DORADO"/>
-			<Set OccurrenceFrequency="20"			
+			<Set OccurrenceFrequency="10"			
 				 AdjacentTilesCareAboutFeatureTypes="false"
 				 AdjacentTilesRequireJungle="false"
 				 RequiredNumberOfAdjacentJungle="0"/>
 		</Update>
 		<Update>
 			<Where Type="FEATURE_FOUNTAIN_YOUTH"/>
-			<Set OccurrenceFrequency="20"/>
+			<Set OccurrenceFrequency="10"/>
 		</Update>
 		<Update>
 			<Where Type="FEATURE_SOLOMONS_MINES"/>
-			<Set OccurrenceFrequency="20"
+			<Set OccurrenceFrequency="10"
 				 AdjacentTilesCareAboutPlotTypes="false"
 				 AdjacentTilesAvoidMountain="false"
 				 MaximumAllowedAdjacentMountain="0"/>

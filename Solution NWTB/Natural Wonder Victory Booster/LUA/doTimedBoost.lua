@@ -10,10 +10,10 @@ local cGKS = GameInfoTypes.FEATURE_SOLOMONS_MINES
 local iHandicap = Game:GetHandicapType()
 local iNumPlayers = Game.CountCivPlayersAlive()
 
-local cBOOST_FOC = iNumPlayers * 10
-local cBOOST_GEE = iNumPlayers * 10
-local cBOOST_GKS = iNumPlayers * iHandicap * 1000
-local cTURNS_TO_BOOST = iNumPlayers * iHandicap
+local cBOOST_FOC = iHandicap * 50
+local cBOOST_GEE = iHandicap * 25
+local cBOOST_GKS = iHandicap * 10000
+local cTURNS_TO_BOOST = iHandicap * 10
 local cMAX_CITY_DISTANCE = 5
 
 print("Loaded OK: "..cTURNS_TO_BOOST.." turns for "..cBOOST_FOC.." culture")
@@ -363,7 +363,6 @@ end
 
 --------------------------------------------------------------
 local function OnPlayerDoTurn(iPlayer)
-	if (iPlayer == 63) then return end --skip for barbarians turn
 	updateTimer("NWTB_FOC",iPlayer)
 	updateTimer("NWTB_GEE",iPlayer)
 	updateTimer("NWTB_GKS",iPlayer)
