@@ -3,9 +3,23 @@
 <GameData>
 	
 	<Features>
+		<Delete Type="FEATURE_SRI_PADA" />
+		<Delete Type="FEATURE_MT_SINAI" />
+		<Delete Type="FEATURE_MT_KAILASH" />
+		<Delete Type="FEATURE_ULURU" />
+		<Delete Type="FEATURE_CRATER" />
+		<Delete Type="FEATURE_FUJI" />
+		<Delete Type="FEATURE_MESA" />
+		<Delete Type="FEATURE_GEYSER" />
+		<Delete Type="FEATURE_POTOSI" />
+		<Delete Type="FEATURE_KILIMANJARO" />
+		<Delete Type="FEATURE_LAKE_VICTORIA" />
+		
 		<Update>
 			<Where Type="FEATURE_EL_DORADO"/>
 			<Set 
+				NaturalWonder="True"
+				InfluenceCost="-3"
 				Description="Golden Eras El Dorado (NWTB)"
 				Help="Hold for a number of turns to receive Golden Eras. (NWTB)."
 				OccurrenceFrequency="10"
@@ -14,11 +28,14 @@
 				FirstFinderGold="0"
 				AdjacentUnitFreePromotion=""
 				NoCity="true"
+				SeeThrough="3"
 				Defense="20"/>
 		</Update>
 		<Update>
 			<Where Type="FEATURE_FOUNTAIN_YOUTH"/>
 			<Set
+				NaturalWonder="True"
+				InfluenceCost="-3"
 				Description="Fountain of Culture (NWTB)"
 				Help="Hold for a number of turns to receive a Fountain of Culture (NWTB)."
 				OccurrenceFrequency="10"
@@ -27,11 +44,14 @@
 				FirstFinderGold="0"
 				AdjacentUnitFreePromotion=""
 				NoCity="true"
+				SeeThrough="3"
 				Defense="20"/>
 		</Update>
 		<Update>
 			<Where Type="FEATURE_SOLOMONS_MINES"/>
 			<Set
+				NaturalWonder="True"
+				InfluenceCost="-3"
 				Description="Gold of King Solomon (NWTB)"
 				Help="Hold for a number of turns to receive all the King Solomons Gold (NWTB)."
 				OccurrenceFrequency="10"
@@ -40,6 +60,7 @@
 				FirstFinderGold="0"
 				AdjacentUnitFreePromotion=""
 				NoCity="true"
+				SeeThrough="3"
 				Defense="20"/>
 		</Update>	
 	</Features>
@@ -47,21 +68,63 @@
 	<Natural_Wonder_Placement>
 		<Update>
 			<Where Type="FEATURE_EL_DORADO"/>
-			<Set OccurrenceFrequency="10"			
+			<Set CoreTileCanBeAnyTerrainType="false"
+				 CoreTileCanBeGrass="true"
+				 CoreTileCanBePlains="true"
+				 CoreTileCanBeDesert="true"
+				 AvoidBiggestLandmass="false"	
+				 
+				 AdjacentTilesCareAboutTerrainTypes="false"
 				 AdjacentTilesCareAboutFeatureTypes="false"
+				 AdjacentTilesCareAboutPlotTypes="false"
 				 AdjacentTilesRequireJungle="false"
-				 RequiredNumberOfAdjacentJungle="0"/>
+				 
+				 AdjacentTilesAvoidDesert="false"
+				 AdjacentTilesAvoidTundra="false"
+				 AdjacentTilesAvoidMountain="false"
+				 AdjacentTilesAvoidMarsh="false"
+				 AdjacentTilesAvoidGrass="false"
+				 />
 		</Update>
 		<Update>
 			<Where Type="FEATURE_FOUNTAIN_YOUTH"/>
-			<Set OccurrenceFrequency="10"/>
+			<Set CoreTileCanBeAnyTerrainType="false"
+				 CoreTileCanBeGrass="true"
+				 CoreTileCanBePlains="true"
+				 CoreTileCanBeDesert="true"
+				 AvoidBiggestLandmass="false"
+				 
+				 AdjacentTilesCareAboutTerrainTypes="false"
+				 AdjacentTilesCareAboutFeatureTypes="false"
+				 AdjacentTilesCareAboutPlotTypes="false"
+				 AdjacentTilesRequireJungle="false"
+				 
+				 AdjacentTilesAvoidDesert="false"
+				 AdjacentTilesAvoidTundra="false"
+				 AdjacentTilesAvoidMountain="false"
+				 AdjacentTilesAvoidMarsh="false"
+				 AdjacentTilesAvoidGrass="false"
+				 />
 		</Update>
 		<Update>
 			<Where Type="FEATURE_SOLOMONS_MINES"/>
-			<Set OccurrenceFrequency="10"
+			<Set CoreTileCanBeAnyTerrainType="false"
+				 CoreTileCanBeGrass="true"
+				 CoreTileCanBePlains="true"
+				 CoreTileCanBeDesert="true"
+				 AvoidBiggestLandmass="false"
+				 
+				 AdjacentTilesCareAboutTerrainTypes="false"
+				 AdjacentTilesCareAboutFeatureTypes="false"
 				 AdjacentTilesCareAboutPlotTypes="false"
+				 AdjacentTilesRequireJungle="false"
+				 
+				 AdjacentTilesAvoidDesert="false"
+				 AdjacentTilesAvoidTundra="false"
 				 AdjacentTilesAvoidMountain="false"
-				 MaximumAllowedAdjacentMountain="0"/>
+				 AdjacentTilesAvoidMarsh="false"
+				 AdjacentTilesAvoidGrass="false"
+				 />
 		</Update>
 	</Natural_Wonder_Placement>
 	

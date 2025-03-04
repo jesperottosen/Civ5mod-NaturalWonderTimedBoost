@@ -3,12 +3,26 @@
 <GameData>
 	
 	<Features>
+		<Delete Type="FEATURE_SRI_PADA" />
+		<Delete Type="FEATURE_MT_SINAI" />
+		<Delete Type="FEATURE_MT_KAILASH" />
+		<Delete Type="FEATURE_ULURU" />
+		<Delete Type="FEATURE_CRATER" />
+		<Delete Type="FEATURE_FUJI" />
+		<Delete Type="FEATURE_MESA" />
+		<Delete Type="FEATURE_GEYSER" />
+		<Delete Type="FEATURE_POTOSI" />
+		<Delete Type="FEATURE_KILIMANJARO" />
+		<Delete Type="FEATURE_LAKE_VICTORIA" />
+		
 		<Update>
 			<Where Type="FEATURE_EL_DORADO"/>
 			<Set 
+				NaturalWonder="True"
+				InfluenceCost="-3"
 				Description="Golden Eras El Dorado (NWTB)"
 				Help="Hold for a number of turns to receive Golden Eras. (NWTB)."
-				OccurrenceFrequency="15"
+				OccurrenceFrequency="10"
 				Impassable="false" 
 				InBorderHappiness="1" 
 				FirstFinderGold="0"
@@ -20,9 +34,11 @@
 		<Update>
 			<Where Type="FEATURE_FOUNTAIN_YOUTH"/>
 			<Set
+				NaturalWonder="True"
+				InfluenceCost="-3"
 				Description="Fountain of Culture (NWTB)"
 				Help="Hold for a number of turns to receive a Fountain of Culture (NWTB)."
-				OccurrenceFrequency="15"
+				OccurrenceFrequency="10"
 				Impassable="false"
 				InBorderHappiness="1"
 				FirstFinderGold="0"
@@ -34,9 +50,11 @@
 		<Update>
 			<Where Type="FEATURE_SOLOMONS_MINES"/>
 			<Set
+				NaturalWonder="True"
+				InfluenceCost="-3"
 				Description="Gold of King Solomon (NWTB)"
 				Help="Hold for a number of turns to receive all the King Solomons Gold (NWTB)."
-				OccurrenceFrequency="15"
+				OccurrenceFrequency="10"
 				Impassable="false"
 				InBorderHappiness="1"
 				FirstFinderGold="0"

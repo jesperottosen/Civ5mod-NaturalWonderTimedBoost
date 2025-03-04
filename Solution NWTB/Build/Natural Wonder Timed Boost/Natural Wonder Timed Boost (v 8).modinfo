@@ -1,5 +1,5 @@
 ﻿<?xml version="1.0" encoding="utf-8"?>
-<Mod id="18a7bcc1-c7d2-45a4-aa98-a6debf27c2a8" version="7">
+<Mod id="18a7bcc1-c7d2-45a4-aa98-a6debf27c2a8" version="8">
   <Properties>
     <Name>Natural Wonder Timed Boost</Name>
     <Teaser>Three Natural Wonders give delayed boosts</Teaser>
@@ -45,7 +45,7 @@
   </Blocks>
   <Files>
     <File md5="ACF8066DB36EF14B8C52A1E6AA9E0C5D" import="0">LUA/doTimedBoost.lua</File>
-    <File md5="1BF14E6AA8D6C453F95239FF71C6B7C1" import="0">XML/NWTB.xml</File>
+    <File md5="34A18CC1258F0F46FF5E15347BFD144B" import="0">XML/NWTB.xml</File>
   </Files>
   <Actions>
     <OnModActivated>
