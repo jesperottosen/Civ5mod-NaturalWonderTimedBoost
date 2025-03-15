@@ -268,7 +268,7 @@ function doUnitPositionChanged(iPlayer,iUnit,iX,iY)
 	-- Execute
 	if (iTimer ~= nil) then 
 		-- there is an existing timer
-		sResult = "Timer is on for "..sFeature.. ": "..iTimer
+		sResult = "Wait on "..sFeature.." for "..iTimer.." turns."
 	else
 		-- there is no existing timer
 		local centerPlot = {}
@@ -276,7 +276,7 @@ function doUnitPositionChanged(iPlayer,iUnit,iX,iY)
 		centerPlot.yPosition = iY
 		claimTerritoryAroundHex(centerPlot, iPlayer)
 		setTimer(iFeatureType,iX,iY,iPlayer,cTURNS_TO_BOOST)
-		sResult = "Hold "..sFeature.." for "..cTURNS_TO_BOOST.." turns"
+		sResult = "Hold "..sFeature.." for "..cTURNS_TO_BOOST.." turns."
 	end
 		
 	-- Notify	

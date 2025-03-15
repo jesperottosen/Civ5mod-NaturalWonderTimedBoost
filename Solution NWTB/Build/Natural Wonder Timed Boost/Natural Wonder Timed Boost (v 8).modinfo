@@ -14,8 +14,9 @@
 [NEWLINE]
 [NEWLINE]After the award, the Natural Wonder is reset for a range of turns, and then up for capture again.
 [NEWLINE]---
-[NEWLINE]Use the MOD: [Really Advanced Setup] to specify exact occurences in the game.
-[NEWLINE]Not compatible with mods that also modify the three wonders above.</Description>
+[NEWLINE]Not compatible with mods that also modify the three wonders above.
+
+[NEWLINE]All other wonders disabled, use MOD:Advanced Setup to enable</Description>
     <Authors>yepzer</Authors>
     <SpecialThanks>ErikTaurus, conan.morris, General Tso</SpecialThanks>
     <HideSetupGame>0</HideSetupGame>
@@ -44,8 +45,8 @@
     <Mod id="f0453ee6-59b3-4fbb-97a9-5c9a8bd8f24e" minversion="1" maxversion="999" title="Natural Wonders Enhanced" />
   </Blocks>
   <Files>
-    <File md5="ACF8066DB36EF14B8C52A1E6AA9E0C5D" import="0">LUA/doTimedBoost.lua</File>
-    <File md5="34A18CC1258F0F46FF5E15347BFD144B" import="0">XML/NWTB.xml</File>
+    <File md5="29AA98489A35537CD63BE0FE06E3AE95" import="0">LUA/doTimedBoost.lua</File>
+    <File md5="39EA3E3ADD9EC65B1351426EBB73D7D6" import="0">XML/NWTB.xml</File>
   </Files>
   <Actions>
     <OnModActivated>

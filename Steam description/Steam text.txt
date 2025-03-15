@@ -10,7 +10,7 @@ Have a unit consistently on an updated Natural Wonder for a range of turns to re
 
 After the award, the Natural Wonder is reset for a range of turns, and then up for capture again.
 ---
-Use the MOD: [Really Advanced Setup] to specify exact occurrences in the game.
+All other wonders disabled, use MOD:Advanced Setup to enable
 Not compatible with mods that also modify the three wonders above.
 ===
 Full code on github.com/jesperottosen/Civ5mod-NaturalWonderTimedBoost/
